@@ -4,7 +4,7 @@
 
 int main(void)
 {
-/* Ask for the users name* "?\n means new line*/
+/* Ask for the users name* "\n" means new line*/
     string name = get_string("Hello. What  is your name?\n");
 
 
