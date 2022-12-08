@@ -5,7 +5,7 @@
 int length_of_creditnumber (long int n);
 int calc_checksum (long int cnum, int len);
 int calc_firstnumber(long int cnum, int len);
-int printTypeOfCard (int frstnum, int secnum, int len);
+int valid_cardandTypeOfCard (int frstnum, int secnum, int len);
 
 int main(void)
 {
@@ -13,25 +13,49 @@ int main(void)
 
     long int creditnumber = get_long("Give me credit number");
 
+    /* calculate lenth of creditcard number*/
+    int length = length_of_creditnumber(creditnumber);
+    /*p debug rintf("length of creditcard number is %i\n", length);*/
+
 
     /* calculate checksum - if valid creditcard number*/
-
-    int length = length_of_creditnumber(creditnumber);
-    /*printf("length of creditcard number is %i\n", length);*/
-
     int checksum = calc_checksum (creditnumber, length);
-    if (checksum %10 != 0)
+
+    /*calculate first and second number on card*/
+    int firstnumber = calc_firstnumber(creditnumber, length);
+    int seclenght = length - 1;
+    int secondnumber =calc_firstnumber (creditnumber, seclenght);
+
+    /*check if card number fullfill requireent for AMEX , Mastercard or VISA
+    VISA: starts with 4  - AND -  13 or 16 digits
+    Master Card: starts with 51,52,53,54,55  - AND - 16 digits
+    American Express: starts with 34 or 37 - AND - 15 digits
+    */
+    int status1 = valid_cardandTypeOfCard (firstnumber, secondnumber, length);
+
+
+    /*Print result depending on if it has a valid checksum and is one of the required carr types */
+    /* debug: printf("checksum: %i\n", checksum); */
+    if ((checksum %10 != 0) || (status1 == 0))
     {
     printf("INVALID\n");
     }
     else
     {
     printf("Number: %li\n", creditnumber);
-    int firstnumber = calc_firstnumber(creditnumber, length);
-    int seclenght = length - 1;
-    int secondnumber =calc_firstnumber (creditnumber, seclenght);
-    int status1 = printTypeOfCard (firstnumber, secondnumber, length);
-    }
+        if (status1 == 3)
+        {
+            printf("AMEX\n");
+        }
+        else if (status1 == 4)
+        {
+            printf("VISA\n");
+        }
+        else if (status1 == 5)
+        {
+            printf("MASTERCARD\n");
+        }
+    };
 
 
 }
@@ -60,6 +84,7 @@ return tmplen;
 
 int calc_checksum (long int cnum, int len)
 {
+/* clculate checksum*/
     int tmpchecksum = 0;
     long int tmpcnum = cnum;
     int sumEveni = 0;
@@ -97,6 +122,7 @@ return result_checksum;
 
 int calc_firstnumber(long int cnum, int len)
 {
+/* check starting number of cnum*/
     long int tmpcnum = cnum;
     int tmplen = len;
     int digit = 0;
@@ -117,35 +143,37 @@ int calc_firstnumber(long int cnum, int len)
     return digit;
 }
 
-int printTypeOfCard (int frstnum, int secnum, int len)
+int valid_cardandTypeOfCard (int frstnum, int secnum, int len)
+
 {
-    if ((frstnum == 4)&&((len == 13)||(len==16)))
-    {
-        printf("VISA\n");
-    }
-    else if (((frstnum == 3) && ((secnum == 4) || (secnum == 7) )) && (len == 15))
-    {
-        printf("AMEX\n");
-    }
-    else if (((frstnum == 5) && ((secnum > 0) && (secnum < 6)))&&(len == 16))
-    {
-        printf("MASTERCARD\n");
-    }
-    else
-    {
-        printf("Unknown\n");
-    };
-    /* print type of card*/
-    /*
+     /*check if card number fullfill requireent for AMEX , Mastercard or VISA
     VISA: starts with 4  - AND -  13 or 16 digits
     Master Card: starts with 51,52,53,54,55  - AND - 16 digits
     American Express: starts with 34 or 37 - AND - 15 digits
     */
+    if ((frstnum == 4)&&((len == 13)||(len==16)))
+    {
+        /*printf("VISA\n");*/
+        return 4;
+    }
+    else if (((frstnum == 3) && ((secnum == 4) || (secnum == 7) )) && (len == 15))
+    {
+        /*printf("AMEX\n");*/
+        return 3;
 
+    }
+    else if (((frstnum == 5) && ((secnum > 0) && (secnum < 6)))&&(len == 16))
+    {
+        /*printf("MASTERCARD\n");*/
+        return 5;
 
-     /* check length of number and starting numbers*/
+    }
+    else
+    {
+        /*printf("INVALID\n");*/
+        return 0;
+    };
 
-     return 0;
 
 }
 
