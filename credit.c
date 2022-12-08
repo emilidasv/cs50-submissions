@@ -124,11 +124,11 @@ int printTypeOfCard (int frstnum, int secnum, int len)
     }
     else if (((frstnum == 3) && ((secnum == 4) || (secnum == 7) )) && (len == 15))
     {
-        printf("American Express\n");
+        printf("AMEX\n");
     }
     else if (((frstnum == 5) && ((secnum > 0) && (secnum < 6)))&&(len == 16))
     {
-        printf("Master Card\n");
+        printf("MASTERCARD\n");
     }
     else
     {
