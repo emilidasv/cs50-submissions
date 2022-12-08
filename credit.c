@@ -12,7 +12,7 @@ int main(void)
     /*prompt for input of creit card number*/
 
     long int creditnumber = get_long("Give me credit number");
-    printf("Number: %li\n", creditnumber);
+
 
     /* calculate checksum - if valid creditcard number*/
 
@@ -22,10 +22,11 @@ int main(void)
     int checksum = calc_checksum (creditnumber, length);
     if (checksum %10 != 0)
     {
-    printf("Unvalid\n");
+    printf("INVALID\n");
     }
     else
     {
+    printf("Number: %li\n", creditnumber);
     int firstnumber = calc_firstnumber(creditnumber, length);
     int seclenght = length - 1;
     int secondnumber =calc_firstnumber (creditnumber, seclenght);
