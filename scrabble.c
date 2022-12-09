@@ -6,7 +6,7 @@
 // Points assigned to each letter of the alphabet
 int POINTS[] = {1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
 
-string charstring ="abcdefghijklmnopqrstuvwxyz";
+string charstring = "abcdefghijklmnopqrstuvwxyz";
 
 int compute_score(string word);
 
@@ -50,7 +50,7 @@ int compute_score(string word)
     int numberoflettersinalpa = strlen(charstring);
 
     for (int i = 0, n = strlen(word); i < n; i++)
-/*make sure all are lower case*/
+    /*make sure all are lower case*/
     {
         tmpstring[i] = tolower(word[i]);
     }
@@ -76,5 +76,5 @@ int compute_score(string word)
 
 
 
-        return sumOfPoinst;
+    return sumOfPoinst;
 }
