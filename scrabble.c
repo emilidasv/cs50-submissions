@@ -5,8 +5,8 @@
 
 // Points assigned to each letter of the alphabet
 int POINTS[] = {1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
-/*string charstring[] = {"a","b","c","d","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};*/
-string charstring ="abcdefghihjklmnopqrstuvwxyz";
+
+string charstring ="abcdefghijklmnopqrstuvwxyz";
 
 int compute_score(string word);
 
@@ -18,8 +18,9 @@ int main(void)
 
     // Score both words
     int score1 = compute_score(word1);
+    printf("score1: %i", score1);
     int score2 = compute_score(word2);
-
+    printf("score2: %i", score2);
     // TODO: Print the winner
     if (score1 > score2)
     {
@@ -32,9 +33,11 @@ int main(void)
     else
     {
         printf("Player 2 wins!\n");
-    }
-
-
+    };
+    /*for (int m=0;m<28;m++)
+    {
+        printf("%i %c\n", POINTS[m], charstring[m]);
+    };*/
 }
 
 int compute_score(string word)
@@ -61,6 +64,11 @@ int compute_score(string word)
             if (tmpstring[j] == charstring[k])
             {
                 sumOfPoinst = sumOfPoinst + POINTS[k];
+                /*printf("tmpstring[j]: %c\n", tmpstring[j]);
+                printf("Points[k]: %i\n", POINTS[k]);
+                printf("Charstring[k]: %c\n", charstring[k]);
+                */
+
             }
         }
 
