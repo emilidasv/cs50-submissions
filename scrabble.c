@@ -49,8 +49,8 @@ int compute_score(string word)
     int sumOfPoinst = 0;
     int numberoflettersinalpa = strlen(charstring);
 
-    for (int i = 0, n = strlen(word); i < n; i++)
     /*make sure all are lower case*/
+    for (int i = 0, n = strlen(word); i < n; i++)
     {
         tmpstring[i] = tolower(word[i]);
     }
