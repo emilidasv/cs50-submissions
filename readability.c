@@ -74,7 +74,7 @@ else if (grade < 1)
 }
 else
 {
-    printf("Grade: %i\n", grade);
+    printf("Grade %i\n", grade);
 }
 
 /*printf("readingindex: %f\n", round(readingindex));*/
