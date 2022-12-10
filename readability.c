@@ -66,7 +66,7 @@ int grade = round(readingindex);
 
 if (grade > 16)
 {
-    printf("Grade: 16+\n");
+    printf("Grade 16+\n");
 }
 else if (grade < 1)
 {
