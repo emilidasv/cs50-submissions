@@ -52,7 +52,7 @@ int main(int argc, string argv[])
 
                         };
 
-                keyarray[0][j] = argv[1][j];
+                keyarray[0][j] = tolower(argv[1][j]);
                 keyarray[1][j] = charstring[j];
 
                     }
@@ -78,9 +78,21 @@ int main(int argc, string argv[])
             {
                 for (int k = 0; k < 26; k++)
                 {
-                    if (tolower(tmpchar) == keyarray[1][k])
+                    if ((tolower(tmpchar)) == keyarray[1][k])
                     {
-                    chifferstring[i] = keyarray[0][k];
+                        if (((tmpchar)> 96) && ((tmpchar) < 123))
+                        {
+                            chifferstring[i] = keyarray[0][k];
+                            
+                        }
+                        else
+                        {
+
+                            chifferstring[i] = toupper(keyarray[0][k]); /*Carolina*/
+                            printf("chiffer%c",keyarray[0][k] );
+                        }
+
+
                     };
 
                 }
