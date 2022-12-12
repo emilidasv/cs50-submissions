@@ -52,17 +52,28 @@ int main(int argc, string argv[])
 
                         };
 
-                keyarray[0][j] = tolower(argv[1][j]);
-                keyarray[1][j] = charstring[j];
+
 
                     }
 
 
 
                 }
-
+                keyarray[0][j] = tolower(argv[1][j]);
+                keyarray[1][j] = charstring[j];
 
             }
+
+        /* print key array*/
+   /*     for (int j=0;j<26;j++)
+        {   printf("keyarray index%i\n",j);
+
+
+            printf(" argv[1][j]; %c", argv[1][j]);
+            printf("charsting:%c", charstring[j]);
+            printf("chif: %c", keyarray[0][j]);
+            printf("char: %c\n", keyarray[1][j]);
+        }*/
         string userInputtext = get_string("plaintext:");
         int lenoftext1 = strlen(userInputtext);
         /*  Create the chiffer*/
@@ -77,18 +88,22 @@ int main(int argc, string argv[])
             else
             {
                 for (int k = 0; k < 26; k++)
+
                 {
+
                     if ((tolower(tmpchar)) == keyarray[1][k])
                     {
                         if (((tmpchar)> 96) && ((tmpchar) < 123))
                         {
                             chifferstring[i] = keyarray[0][k];
 
+
                         }
                         else
                         {
 
                             chifferstring[i] = toupper(keyarray[0][k]);
+
                         }
 
 
@@ -107,7 +122,7 @@ int main(int argc, string argv[])
 
 
         /*  Print out the chiffer*/
-        printf("ciphertext:");
+        printf("ciphertext: ");
         for (int i = 0; i < lenoftext1 ;i++)
         {
 
@@ -119,7 +134,12 @@ int main(int argc, string argv[])
         };
         printf("\n");
 
-
+  /*     for (int l=0;l<27;l++)
+        {
+            printf("L:%i", l);
+            printf("keyarry%c", keyarray[0][l]);
+            printf("charsting%c\n", keyarray[1][l]);
+        }*/
 
         }
 
