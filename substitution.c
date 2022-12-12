@@ -107,7 +107,7 @@ int main(int argc, string argv[])
 
 
         /*  Print out the chiffer*/
-        printf("ciphertext: ");
+        printf("ciphertext:");
         for (int i = 0; i < lenoftext1 ;i++)
         {
 
