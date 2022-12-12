@@ -83,13 +83,12 @@ int main(int argc, string argv[])
                         if (((tmpchar)> 96) && ((tmpchar) < 123))
                         {
                             chifferstring[i] = keyarray[0][k];
-                            
+
                         }
                         else
                         {
 
-                            chifferstring[i] = toupper(keyarray[0][k]); /*Carolina*/
-                            printf("chiffer%c",keyarray[0][k] );
+                            chifferstring[i] = toupper(keyarray[0][k]);
                         }
 
 
