@@ -1,0 +1,15 @@
+sort1 uses: Bubble Sort
+
+How do you know?:This is slower than sort2 and roughly speed as sort3 when doing random files. (n*n)
+Bubble sort has best case n and when the file is sorted it goes quick so since the sorted files goes quicker with sorte file
+this must be Bubble sort
+
+sort2 uses: Merge Sort
+
+How do you know?: This is the fastest and is fast even if the file is big bth for randsom files and sorted files. Merge sort is nlogn so tsort 2 must be Merge sort.
+
+sort3 uses:Selection Sort
+
+How do you know?: This is slower than sort2 and roughly speed as sort1 when doing random files.. (n*n)
+Sort 3 is faster than sort 1 when doing a sorted file and Selection sort has n*n for this best case.
+It goes slower even if the file already is sorted (n*n)
