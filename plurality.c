@@ -76,15 +76,15 @@ bool vote(string name)
     You may assume that no two candidates will have the same name.
     */
     for (int j = 0; j < candidate_count; j++)
+    {
+        if (strcmp(candidates[j].name,  name) == 0)
         {
-            if (strcmp(candidates[j].name,  name) == 0)
-                {
-                    candidates[j].votes = candidates[j].votes + 1;
-                    return true;
-                }
-
+            candidates[j].votes = candidates[j].votes + 1;
+            return true;
         }
-        return false;
+
+    }
+    return false;
 
 }
 
@@ -101,29 +101,35 @@ void print_winner(void)
 // maxvotes
     int maxvotes = 0;
 
-     for (int i = 0; i < candidate_count; i++)
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (maxvotes < candidates[i].votes)
+
         {
-            if (maxvotes < candidates[i].votes)
-            {maxvotes = candidates[i].votes;}
-        };
+            maxvotes = candidates[i].votes;
+        }
+
+    };
 
     for (int j = 0; j < candidate_count; j++)
+    {
+
+
+        if (maxvotes == candidates[j].votes)
         {
 
-
-            if (maxvotes == candidates[j].votes)
-            {
             candidates[j].iswinner = true;
             printf("%s\n", candidates[j].name);
-            }
-
-
-         // printf("Candidate: %s",  candidates[j].name);
-         // printf(" Votes: %i\n", candidates[j].votes);
-         // printf ("maxvotes:%i", maxvotes);
-
 
         }
+
+
+        // printf("Candidate: %s",  candidates[j].name);
+        // printf(" Votes: %i\n", candidates[j].votes);
+        // printf ("maxvotes:%i", maxvotes);
+
+
+    }
 
 
 
