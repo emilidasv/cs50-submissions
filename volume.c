@@ -54,11 +54,11 @@ int main(int argc, char *argv[])
     fread(header, sizeof(header), 44, input);
     //output = input;
     fwrite(header, sizeof(header), HEADER_SIZE, output);
-    printf("First head%c\n" , header[0]);
-    while(fread(&buffer, sizeof(buffer), 1, input))
+    printf("First head%c\n", header[0]);
+    while (fread(&buffer, sizeof(buffer), 1, input))
     {
         buffer *= factor;
-        fwrite(&buffer, sizeof(buffer), 1 , output);
+        fwrite(&buffer, sizeof(buffer), 1, output);
 
     };
 
