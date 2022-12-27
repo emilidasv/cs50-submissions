@@ -76,6 +76,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     return;
 }
 
+
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
@@ -98,7 +99,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 
                 if (j == 0)
                 {
-                    // i is 0 and j is 0
+                    // i is 0 and j is 0  left top corner
                         int tmpblue=
                         tmpimage[i][j].rgbtBlue + tmpimage[i][j + 1].rgbtBlue+
                         tmpimage[i + 1][j].rgbtBlue+ tmpimage[i + 1][j + 1].rgbtBlue;
@@ -123,9 +124,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 
 
                 }
-                else if (j > 0 && j < width - 2)
+                else if (j > 0 && j < width - 1)
                 {
-                // i is 0 and j is between 1 and width -2
+                // i is 0 and j is between 1 and width -2, top row, in middle
                         int tmpblue=
                         tmpimage[i][j - 1].rgbtBlue + tmpimage[i][j].rgbtBlue + tmpimage[i][j + 1].rgbtBlue+
                         tmpimage[i+1][j - 1].rgbtBlue + tmpimage[i + 1][j].rgbtBlue+ tmpimage[i + 1][j + 1].rgbtBlue;
@@ -151,7 +152,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 }
                 else if (j == width - 1)
                 {
-                // i is 0 and j is width - 1
+                // i is 0 and j is width - 1  ; top row left side
                         int tmpblue=
                         tmpimage[i][j - 1].rgbtBlue + tmpimage[i][j].rgbtBlue +
                         tmpimage[i+1][j - 1].rgbtBlue + tmpimage[i + 1][j].rgbtBlue;
@@ -179,11 +180,11 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 }
 
             }
-            else if ( i > 0 && i < height -2)
+            else if ( i > 0 && i < height - 1)
             {
                 if (j == 0)
                 {
-                                        // i > 0 and j = 0
+                                        // i > 0 and j = 0   , not top row , left side
                         int tmpblue=
                         tmpimage[i - 1][j].rgbtBlue + tmpimage[i - 1][j + 1].rgbtBlue+
                         tmpimage[i][j].rgbtBlue + tmpimage[i][j + 1].rgbtBlue+
@@ -212,29 +213,29 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 
 
                 }
-                else if (j > 0 && j < width - 2)
+                else if (j > 0 && j < width - 1)
                 {
-                    // i >0 and j < width - 2
+                    // i >0 and j < width - 2 not top row, middle
                         int tmpblue=
                         tmpimage[i - 1][j - 1].rgbtBlue + tmpimage[i - 1][j].rgbtBlue + tmpimage[i - 1][j + 1].rgbtBlue+
                         tmpimage[i][j - 1].rgbtBlue + tmpimage[i][j].rgbtBlue + tmpimage[i][j + 1].rgbtBlue+
                         tmpimage[i+1][j - 1].rgbtBlue + tmpimage[i + 1][j].rgbtBlue+ tmpimage[i + 1][j + 1].rgbtBlue;
 
-                        tmpblue = round(tmpblue / 9);
+                        tmpblue = round(tmpblue / 9.0);
 
                         int tmpgreen =
                         tmpimage[i - 1][j - 1].rgbtGreen + tmpimage[i - 1][j].rgbtGreen + tmpimage[i - 1][j + 1].rgbtGreen+
                         tmpimage[i][j - 1].rgbtGreen + tmpimage[i][j].rgbtGreen + tmpimage[i][j + 1].rgbtGreen+
                         tmpimage[i+1][j - 1].rgbtGreen + tmpimage[i + 1][j].rgbtGreen+ tmpimage[i + 1][j + 1].rgbtGreen;
 
-                        tmpgreen = round(tmpgreen / 9);
+                        tmpgreen = round(tmpgreen / 9.0);
 
                         int tmpred =
                         tmpimage[i - 1][j - 1].rgbtRed + tmpimage[i - 1][j].rgbtRed + tmpimage[i - 1][j + 1].rgbtRed+
                         tmpimage[i][j - 1].rgbtRed + tmpimage[i][j].rgbtRed + tmpimage[i][j + 1].rgbtRed+
                         tmpimage[i+1][j - 1].rgbtRed + tmpimage[i + 1][j].rgbtRed+ tmpimage[i + 1][j + 1].rgbtRed;
 
-                        tmpred = round(tmpred / 9);
+                        tmpred = round(tmpred / 9.0);
 
                         image[i][j].rgbtBlue = tmpblue;
                         image[i][j].rgbtGreen = tmpgreen;
@@ -244,7 +245,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 }
                 else if (j == width - 1)
                 {
-                        // i >1 and j = width -1
+                        // i >1 and j = width -1  ; not top row , last column
                         int tmpblue=
                         tmpimage[i - 1][j - 1].rgbtBlue + tmpimage[i - 1][j].rgbtBlue +
                         tmpimage[i][j - 1].rgbtBlue + tmpimage[i][j].rgbtBlue +
@@ -279,7 +280,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             {
                 if (j ==0)
                 {
-                    // i = last row  height - 1, j = first column
+                    // i = last row  height - 1, j = first column  last row, first column
                         int tmpblue=
                         tmpimage[i - 1][j].rgbtBlue + tmpimage[i - 1][j + 1].rgbtBlue+
                         tmpimage[i][j].rgbtBlue + tmpimage[i][j + 1].rgbtBlue;
@@ -307,10 +308,10 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 
 
                 }
-                else if (j > 0 && j < width - 2)
+                else if (j > 0 && j < width - 1)
                 {
-                    // i = last row j <> first or last column
-                                            int tmpblue=
+                    // i = last row j <> first or last column   last row, middle
+                        int tmpblue=
                         tmpimage[i - 1][j - 1].rgbtBlue + tmpimage[i - 1][j].rgbtBlue + tmpimage[i - 1][j + 1].rgbtBlue+
                         tmpimage[i][j - 1].rgbtBlue + tmpimage[i][j].rgbtBlue + tmpimage[i][j + 1].rgbtBlue;
 
