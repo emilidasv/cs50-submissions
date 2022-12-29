@@ -25,6 +25,7 @@ int main(int argc, char *argv[])
 
     FILE *ifileptr = fopen(infile, "r");
     FILE *imgptr;
+    int foundjpg = 0;
 
     if (ifileptr == NULL)
     {
@@ -38,7 +39,7 @@ int main(int argc, char *argv[])
     {
         if ((buffer[0] == 0xff) && (buffer[1] == 0xd8) && (buffer[2] == 0xff) && ((buffer[3] & 0xf0) == 0xe0))
         {
-
+            foundjpg = 1;
             if (tmpnum == 0)
             {
                 // this is the first jpg block
@@ -64,7 +65,7 @@ int main(int argc, char *argv[])
 
             // block is not starting as a jpg
         {
-            if (tmpnum > 1)
+            if (foundjpg == 1)
             {
                 fwrite(buffer, 1, blocksize, imgptr);
             }
