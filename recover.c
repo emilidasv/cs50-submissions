@@ -43,7 +43,6 @@ int main(int argc, char *argv[])
             {
                 // this is the first jpg block
                 // create a new filename
-                tmpnum++;
 
                 sprintf(tmpfilename, "%03i.jpg", tmpnum);
                 imgptr = fopen(tmpfilename, "w");
@@ -65,7 +64,7 @@ int main(int argc, char *argv[])
 
             // block is not starting as a jpg
         {
-            if (tmpnum > 0)
+            if (tmpnum > 1)
             {
                 fwrite(buffer, 1, blocksize, imgptr);
             }
