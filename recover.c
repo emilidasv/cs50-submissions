@@ -39,24 +39,32 @@ int main(int argc, char *argv[])
     {
         if ((buffer[0] == 0xff) && (buffer[1] == 0xd8) && (buffer[2] == 0xff) && ((buffer[3] & 0xf0) == 0xe0))
         {
-            foundjpg = 1;
+
             if (tmpnum == 0)
             {
                 // this is the first jpg block
                 // create a new filename
 
+                foundjpg++;
+
                 sprintf(tmpfilename, "%03i.jpg", tmpnum);
+                tmpnum++;
+                printf("ope file named:%s", tmpfilename);
                 imgptr = fopen(tmpfilename, "w");
                 fwrite(buffer, 1, blocksize, imgptr);
             }
             else
             {
                 // more jpg blocks after the first one, fisrt close old img
+                printf("closing file named:%s", tmpfilename);
                 fclose(imgptr);
 
                 // open  new img file
-                tmpnum++;
+
+                foundjpg++;
                 sprintf(tmpfilename, "%03i.jpg", tmpnum);
+                tmpnum++;
+                printf("ope file named:%s", tmpfilename);
                 imgptr = fopen(tmpfilename, "w");
                 fwrite(buffer, 1, blocksize, imgptr);
             }
@@ -65,7 +73,7 @@ int main(int argc, char *argv[])
 
             // block is not starting as a jpg
         {
-            if (foundjpg == 1)
+            if (foundjpg > 0 )
             {
                 fwrite(buffer, 1, blocksize, imgptr);
             }
