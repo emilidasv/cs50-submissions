@@ -209,7 +209,7 @@ bool print_winner(void)
 
         //printf("print Winner: %s\n", candidates[j].name);
         //printf("print VOTES: %i\n", candidates[j].votes);
-        if (candidates[j].votes  >= half_votes)
+        if (candidates[j].votes  > half_votes)
         {
             printf("%s\n", candidates[j].name);
             return true;
