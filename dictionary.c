@@ -17,7 +17,7 @@ typedef struct node
 node;
 
 // TODO: Choose number of buckets in hash table
-const unsigned int N = 17576;
+const unsigned int N = 676;
 //26 * 26 * 26 = 17576;
 
 // Hash table
@@ -43,7 +43,7 @@ bool check(const char *word)
     }
     */
 
-    while(tmpcursor != NULL)
+    while (tmpcursor != NULL)
     {
         if (strcasecmp(word, tmpcursor->word) == 0)
         {
@@ -53,7 +53,7 @@ bool check(const char *word)
         {
             tmpcursor = tmpcursor->next;
         }
-    //printf("row 56%s\n", tmpcursor->word);
+        //printf("row 56%s\n", tmpcursor->word);
     }
     return false;
 
@@ -64,38 +64,31 @@ unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
 
-
+    unsigned int tmplen = strlen(word) - 1;
 
     //for each character or beginning of the word load the word into the hash table
 
+    unsigned int ascii_of_char;
 
-    unsigned int ascii_of_char = 0;
-    //ascii_of_char = toupper(word[0]) - 65;
-
-    for (int j = 0; j < strlen(word); j++)
-    {
-        ascii_of_char = ascii_of_char + tolower(word[j]);
-    }
-    return ascii_of_char % N;
-    /*int tmplen = strlen(word) - 1;
     if (tmplen >= 3)
     {
-        ascii_of_char = (toupper(word[0]) + toupper(word[1]) + toupper(word[2]) ) - 3 * 65;
+        ascii_of_char = (toupper(word[0]) + 2 * toupper(word[1]) + 3 * toupper(word[2]) ) - 3 * 65;
     }
     else if (2 == tmplen)
     {
-        ascii_of_char = (toupper(word[0]) + toupper(word[1]) ) - 2 * 65;
+        ascii_of_char = (toupper(word[0]) + 2 * toupper(word[1]) ) - 2 * 65;
     }
     else if (1 == tmplen)
     {
          ascii_of_char = toupper(word[0]) - 65;
     }
     else
-    //tmplen = 0, something is wrong
     {
-        ascii_of_char = -1;
-    };*/
+        ascii_of_char = 0;
+    }
+    ;
 
+    return ascii_of_char % N;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
@@ -128,13 +121,13 @@ bool load(const char *dictionary)
     {
         //allocate memeroy for new node
         newnode = malloc(sizeof(node));
-        if(newnode == NULL)
-            {
-                return false;
-            }
+        if (newnode == NULL)
+        {
+            return false;
+        }
 
         strcpy(newnode->word, tmpline);
-        unsigned int hashindex =hash(tmpline);
+        unsigned int hashindex = hash(tmpline);
 
         newnode->next = table[hashindex];
         table[hashindex] = newnode;
