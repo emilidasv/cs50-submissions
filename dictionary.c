@@ -17,7 +17,7 @@ typedef struct node
 node;
 
 // TODO: Choose number of buckets in hash table
-const unsigned int N = 676;
+const unsigned int N = 17576;
 //26 * 26 * 26 = 17576;
 
 // Hash table
@@ -72,15 +72,15 @@ unsigned int hash(const char *word)
 
     if (tmplen >= 3)
     {
-        ascii_of_char = (toupper(word[0]) + 2 * toupper(word[1]) + 3 * toupper(word[2]) ) - 3 * 65;
+        ascii_of_char = (toupper(word[0]) + 2 * toupper(word[1]) + 3 * toupper(word[2])) - 3 * 65;
     }
     else if (2 == tmplen)
     {
-        ascii_of_char = (toupper(word[0]) + 2 * toupper(word[1]) ) - 2 * 65;
+        ascii_of_char = (toupper(word[0]) + 2 * toupper(word[1])) - 2 * 65;
     }
     else if (1 == tmplen)
     {
-         ascii_of_char = toupper(word[0]) - 65;
+        ascii_of_char = toupper(word[0]) - 65;
     }
     else
     {
