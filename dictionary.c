@@ -175,7 +175,7 @@ bool unload(void)
             tmpcursor = tmpcursor->next;
             free(tmp);
             memoryfreed++;
-            printf("memoryfreed; %i\n", memoryfreed);
+            // debug printf("memoryfreed; %i\n", memoryfreed);
         }
 
 
