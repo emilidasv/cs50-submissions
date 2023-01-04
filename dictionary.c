@@ -168,7 +168,8 @@ bool unload(void)
 
     {
         node *tmpcursor = table[i];
-        while (tmpcursor )
+
+        while (tmpcursor != NULL)
         {
             node *tmp = tmpcursor;
 
