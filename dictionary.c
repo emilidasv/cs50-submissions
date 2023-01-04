@@ -144,6 +144,7 @@ bool load(const char *dictionary)
         newnode->next = table[hashindex];
         table[hashindex] = newnode;
         wordcount++;
+        free(newnode);
 
 
     }
