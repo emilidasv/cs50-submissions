@@ -34,7 +34,7 @@ def main():
 
     numberofsentences = len(sentences)
     # import re
-    print("Words", sentences)
+#   print("Words", sentences)
     avgletters = 0.0
     avgletters = numbersofletters * 100
     avgletters = avgletters / numberofwords
