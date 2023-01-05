@@ -77,9 +77,9 @@ def valid_cardandTypeofcard(frstnum, secnum, len):
     # American Express: starts with 34 or 37 - AND - 15 digits
     if (frstnum == 4) and ((len == 13) or (len == 16)):
         return 4
-    elif (frstnum == 3) and ((secnum > 0) or (secnum < 6)) and (len == 15):
+    elif (frstnum == 3) and (((secnum == 4) or (secnum == 7))) and (len == 15):
         return 3
-    elif (frstnum == 5) and ((secnum > 0) or (secnum < 6)) and (len == 16):
+    elif (frstnum == 5) and ((secnum > 0) and (secnum < 6)) and (len == 16):
         return 5
     else:
         return 0
