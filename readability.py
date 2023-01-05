@@ -7,14 +7,12 @@ def main():
     userInputtext = get_string("please give me the text:")
     lenoftext1 = len(userInputtext)
 
-
-    # Splitting a string with .split()
+#    # Splitting a string with .split()
     words = userInputtext.split()
-    ## debug print("Words", words)
 
-    ## count number of words in the string
+    # count number of words in the string
     numberofwords = len(words)
-    ## debug print("number of words", numberofwords)
+    # debug print("number of words", numberofwords)
 
     # first count the number of letters in each word
     letters = [len(item) for item in words]
@@ -23,13 +21,20 @@ def main():
     numbersofletters = 0
     for elem in range(len(letters)):
         numbersofletters = numbersofletters + letters[elem]
-    ## debug print("letters", numbersofletters)
+    # debug print("letters", numbersofletters)
 
     # calculate numbers of sentences
     sentences = re.split(r'[.!?]+', userInputtext)
-    numberofsentences = len(sentences);
+    numberofsentences = len(sentences)
+#    ## REMOVE ALL EMPTY SENTENES
+    for elem in range(len(sentences)):
+        tmpelem = sentences[elem]
+        if tmpelem == "":
+            numberofsentences -= 1
+
+    numberofsentences = len(sentences)
     # import re
-    ##debug print("Words", sentences)
+    print("Words", sentences)
     avgletters = 0.0
     avgletters = numbersofletters * 100
     avgletters = avgletters / numberofwords
@@ -41,7 +46,7 @@ def main():
         print("Grade 16+")
     elif (grade < 1):
         print("Before Grade 1")
-    else :
+    else:
         print("Grade:", grade)
 
 
