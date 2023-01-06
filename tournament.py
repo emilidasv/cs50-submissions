@@ -25,8 +25,8 @@ def main():
 #        print("csvrecord", csvrec)
 
         for team in csvrec:
-#            print("tem", team["team"])
-#            print("rat", team["rating"])
+            # print("tem", team["team"])
+            # print("rat", team["rating"])
             team["rating"] = int(team["rating"])
             teams.append(team)
         # print list of teams
@@ -50,7 +50,7 @@ def main():
         winner = simulate_tournament(teams)
         if winner in counts:
             counts[winner] += 1
-        else :
+        else:
             counts[winner] = 1
 #    print(counts)
 
@@ -86,7 +86,7 @@ def simulate_round(teams):
 def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
     # TODO
-    while len(teams) >1:
+    while len(teams) > 1:
         # print("teams-simulate", teams)
         teams = simulate_round(teams)
         # print("teams-simulate", teams)
