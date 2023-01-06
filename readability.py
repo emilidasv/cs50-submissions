@@ -8,6 +8,11 @@ def main():
     userInputtext = get_string("please give me the text:")
 #    lenoftext1 = len(userInputtext)
 #    print("10 Words", userInputtext)
+    numbersofletters = len(userInputtext) - userInputtext.count(" ") - userInputtext.count(".") - userInputtext.count("?") -\
+    userInputtext.count("!") - userInputtext.count(",") - userInputtext.count(";") -\
+    userInputtext.count("-") - userInputtext.count("'")
+#    print("30 letters", numbersofletters)
+#    print("len", len(userInputtext))
 
 #    # Splitting a string with .split()
     words = userInputtext.split()
@@ -22,21 +27,21 @@ def main():
 #    print("22letters", letters)
 
     # count the total number of words
-    numbersofletters = 0
-    for elem in range(len(letters)):
-        numbersofletters = numbersofletters + letters[elem]
+#    numbersofletters = 0
+#    for elem in range(len(letters)):
+#        numbersofletters = numbersofletters + letters[elem]
 #    print("28 letters", numbersofletters)
 
     # calculate numbers of sentences
 
     numberofsentences = userInputtext.count(".") + userInputtext.count("?") + userInputtext.count("!")
 #    print("33 numberofsentences", numberofsentences)
-    if (numberofsentences != 1) :
-        sentences = re.split(r'[.!?]+', userInputtext)
+#    if (numberofsentences != 1) :
+#        sentences = re.split(r'[.!?]+', userInputtext)
 
 #        print("37 sentences", sentences)
-        numberofsentences = len(sentences)
-#        print("39 numberofsentences", numberofsentences)
+#        numberofsentences = len(sentences)
+#    print("39 numberofsentences", numberofsentences)
 
     avgletters = 0.0
     avgletters = numbersofletters * 100
