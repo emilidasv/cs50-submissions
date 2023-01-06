@@ -9,7 +9,9 @@ Times:
 check50 cs50/labs/2023/x/worldcup
 Questions:
 
-Which predictions, if any, proved incorrect as you increased the number of simulations?: for lower than 1000 the prediction was similar to the one with more rounds.
+Which predictions, if any, proved incorrect as you increased the number of simulations?:
+for lower than 1000 the prediction was similar to the one with more rounds.
 
 Suppose you're charged a fee for each second of compute time your program uses.
-After how many simulations would you call the predictions "good enough"?: 100000
+After how many simulations would you call the predictions "good enough"?:
+100000
