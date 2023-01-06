@@ -39,7 +39,7 @@ def main():
 #        print("39 numberofsentences", numberofsentences)
 
     avgletters = 0.0
-    avgletters = numbersofletters * 100.0
+    avgletters = numbersofletters * 100
     avgletters = avgletters / numberofwords
 #    print("44 avgletters", avgletters)
 
@@ -51,8 +51,8 @@ def main():
 #    print("51index", round(readingindex))
 #    print("52index", int(round(readingindex)))
 #   print("53index", int(readingindex))
-#    grade = int(round(readingindex))
-    grade = int(readingindex)
+    grade = int(round(readingindex))
+#    grade = int(readingindex)
     if (grade > 16):
         print("Grade 16+")
     elif (grade < 1):
