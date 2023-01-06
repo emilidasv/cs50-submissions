@@ -1,0 +1,15 @@
+Times:
+
+10 simulations:  0m0.033s TODO (record time using 0m0.000s format)
+100 simulations: 0m0.027s TODO (record time using 0m0.000s format)
+1000 simulations: 0m0.052s TODO (record time using 0m0.000s format)
+10000 simulations: 0m0.099s TODO (record time using 0m0.000s format)
+100000 simulations: 0m0.803s TODO (record time using 0m0.000s format)
+1000000 simulations: 0m7.648s TODO (record time using 0m0.000s format)
+check50 cs50/labs/2023/x/worldcup
+Questions:
+
+Which predictions, if any, proved incorrect as you increased the number of simulations?: TODO
+
+Suppose you're charged a fee for each second of compute time your program uses.
+After how many simulations would you call the predictions "good enough"?: 100000
