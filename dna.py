@@ -26,16 +26,13 @@ def main():
 #        print(numberof_keys)
 #        print(keys)
 
-
     # TODO: Read DNA sequence file into a variable
         with open(sys.argv[2]) as str:
             strstr = str.read()
 #            print("sta",strstr)
-            #print("dnaDB", dnaDb["name"])
+            # print("dnaDB", dnaDb["name"])
 
     # TODO: Find longest match of each STR in DNA sequence
-
-
             count_AGATC = longest_match(strstr, 'AGATC')
 #            print("logatc", count_AGATC)
             count_AATG = longest_match(strstr, 'AATG')
@@ -47,36 +44,28 @@ def main():
             person_count = []
             count = 0
             for tmpkey in keys:
-                #person
+                # person
                 count = longest_match(strstr, tmpkey)
                 person_count.append((count))
 #            print(person_count)
             person = dict(zip(keys, person_count))
             # without first key
-            person_sub = dict(itertools.islice(person.items(),1,len(person)))
+            person_sub = dict(itertools.islice(person.items(), 1, len(person)))
 #            print("person", person)
 
     # TODO: Check database for matching profiles
             found = False
 
             for strseq in dnaDb:
- #               print(strseq)
 
-#                substr = [strseq["AGATC"], strseq["AATG"], strseq["TATC"]]
-#                #print("str[0]",substr )
-#                if person[0] == int(strseq["AGATC"]) and\
-#                   person[1] == int(strseq["AATG"]) and\
-#                   person[2] == int(strseq["TATC"]):
+                # str_count = len(strseq)
+                # print(len(person_sub))
+                # print(len(person))
 
-                #strseq_sub = [1:len(strseq)]
-                str_count= len(strseq)
-                #print(len(person_sub))
-                #print(len(person))
+                # print(len(strseq))
 
-                #print(len(strseq))
-
-                strseq_sub = dict(itertools.islice(strseq.items(),1,len(strseq)))
-                #print(len(strseq_sub))
+                strseq_sub = dict(itertools.islice(strseq.items(), 1, len(strseq)))
+                # print(len(strseq_sub))
 
                 if person_sub == strseq_sub:
                     found = True
@@ -85,8 +74,6 @@ def main():
                 print(name)
             else:
                 print("No match")
-
-
 
     return
 
