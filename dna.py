@@ -1,5 +1,6 @@
 import csv
 import sys
+import itertools
 
 
 def main():
@@ -19,6 +20,11 @@ def main():
         for rec in csvrec:
             dnaDb.append(rec)
 #        print("DnaDB", dnaDb)
+        keys = dict.keys(dnaDb[0])
+        numberof_keys = len(keys)
+#        print(keys)
+#        print(numberof_keys)
+#        print(keys)
 
 
     # TODO: Read DNA sequence file into a variable
@@ -26,11 +32,6 @@ def main():
             strstr = str.read()
 #            print("sta",strstr)
             #print("dnaDB", dnaDb["name"])
-
-
-
-
-
 
     # TODO: Find longest match of each STR in DNA sequence
 
@@ -41,21 +42,45 @@ def main():
 #           print("loaatg", count_AATG)
             count_TATC = longest_match(strstr, 'TATC')
 #            print("tatc", count_TATC)
-            person = [count_AGATC, count_AATG , count_TATC]
+#            person = [count_AGATC, count_AATG , count_TATC]
+#           print("person", person)
+            person_count = []
+            count = 0
+            for tmpkey in keys:
+                #person
+                count = longest_match(strstr, tmpkey)
+                person_count.append((count))
+#            print(person_count)
+            person = dict(zip(keys, person_count))
+            # without first key
+            person_sub = dict(itertools.islice(person.items(),1,len(person)))
 #            print("person", person)
 
     # TODO: Check database for matching profiles
             found = False
+
             for strseq in dnaDb:
+ #               print(strseq)
 
-                substr = [strseq["AGATC"], strseq["AATG"], strseq["TATC"]]
-                #print("str[0]",substr )
-                if person[0] == int(strseq["AGATC"]) and\
-                   person[1] == int(strseq["AATG"]) and\
-                   person[2] == int(strseq["TATC"]):
+#                substr = [strseq["AGATC"], strseq["AATG"], strseq["TATC"]]
+#                #print("str[0]",substr )
+#                if person[0] == int(strseq["AGATC"]) and\
+#                   person[1] == int(strseq["AATG"]) and\
+#                   person[2] == int(strseq["TATC"]):
 
-                   found = True
-                   name = strseq["name"]
+                #strseq_sub = [1:len(strseq)]
+                str_count= len(strseq)
+                #print(len(person_sub))
+                #print(len(person))
+
+                #print(len(strseq))
+
+                strseq_sub = dict(itertools.islice(strseq.items(),1,len(strseq)))
+                #print(len(strseq_sub))
+
+                if person_sub == strseq_sub:
+                    found = True
+                    name = strseq["name"]
             if found:
                 print(name)
             else:
@@ -101,7 +126,7 @@ def longest_match(sequence, subsequence):
         longest_run = max(longest_run, count)
 
     # After checking for runs at each character in seqeuence, return longest run found
-    return longest_run
+    return str(longest_run)
 
 
 main()
