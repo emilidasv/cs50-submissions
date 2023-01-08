@@ -1,0 +1,7 @@
+1)
+SELECT name FROM songs;
+
+2)
+SELECT name FROM songs order by tempo;
+
+3)
