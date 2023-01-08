@@ -1,8 +1,4 @@
 1)
-SELECT count(name) FROM songs;
-+-------------+
-| count(name) |
-+-------------+
-| 100         |
-+-------------+
+SELECT name FROM songs;
+
 2)
