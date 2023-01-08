@@ -1,0 +1,11 @@
+1)
+SELECT name FROM songs;
+
+2)
+SELECT name FROM songs order by tempo;
+
+3)
+SELECT name FROM songs order by duration_ms desc limit 5;
+
+4)
+SELECT name FROM songs WHERE (danceability > 0.75 and energy> 0.75 and valence > 0.75);
