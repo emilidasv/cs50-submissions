@@ -1,11 +1,29 @@
 1)
-SELECT name FROM songs;
+SELECT energy, valence, danceability FROM songs;
 
 2)
-SELECT name FROM songs order by tempo;
+SELECT avg(energy), avg(valence), avg(danceability) FROM songs;
 
-3)
-SELECT name FROM songs order by duration_ms desc limit 5;
 
+3)SELECT energy, valence, danceability, tempo FROM songs ORDER by tempo ASC;
 4)
 SELECT name FROM songs WHERE (danceability > 0.75 and energy> 0.75 and valence > 0.75);
+3)SELECT energy, valence, danceability, tempo FROM songs WHERE temp <130 ORDER by tempo ASC;
+SELECT energy, valence, danceability, tempo FROM songs WHERE temp >130 ORDER by tempo ASC;
+SELECT avg(energy), avg(valence), avg(danceability) FROM songs WHERE tempo <130;
+SELECT avg(energy), avg(valence), avg(danceability) FROM songs WHERE tempo >130;
+
+variance energy
+SELECT ROUND(SUM((energy - p)*(energy - p)) / (COUNT(energy)-1),2) AS ‘Variance’ FROM songs,
+(SELECT  AVG(energy) as p FROM songs) where tempo<130;
+
+variance valance
+SELECT ROUND(SUM((valence - p)*(valence - p)) / (COUNT(valence)-1),2) AS ‘Variance’ FROM songs,
+(SELECT  AVG(valence) as p FROM songs) ;
+variance danceability
+
+SELECT ROUND(SUM((danceability - p)*(danceability - p)) / (COUNT(danceability)-1),2) AS ‘Variance’ FROM songs,
+(SELECT  AVG(danceability) as p FROM songs) where tempo<130;
+
+I would ignore the valence since it has much higher variance and really vary depending on the temp of the songs
+I woild not ignore the Tempo andwould include that into the aura.
