@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            document.addEventListener('DOMContentLoaded', function(){
+
+                let textbutton = document.querySelector('#textans');
+
+
+                textbutton.addEventListener('click', function(){
+                    let text2 = document.querySelector("input");
+                    let message2 = document.querySelector("#extramessage2");
+                    if ( text2.value == 'Sophomore')
+                    {
+                        text2.style.color='Green';
+                        text2.style.backgroundColor='White';
+                        message2.innerHTML='Correct';
+                    }
+                    else
+                    {
+                        text2.style.backgroundColor='Red';
+                        message2.innerHTML='Incorrect';
+                     }
+
+            });
+        });
+        function check_fr_answer_part1()
+            {
+                document.getElementById('frsh').style.backgroundColor = 'Green';
+                document.getElementById('frshtxt').style.color  = 'Green';
+            }
+
+            function check_sph_answer_part1()
+            {
+                document.getElementById('sph').style.backgroundColor = 'Red'
+                document.getElementById('sphtxt').style.color  = 'Red';
+            }
+            function check_jr_answer_part1()
+            {
+                document.getElementById('jr').style.backgroundColor = 'Red'
+                document.getElementById('jrtxt').style.color  = 'Red';
+            }
+            function check_sr_answer_part1()
+            {
+                elem = document.getElementById('sr');
+                elem.style.backgroundColor = 'Red';
+                document.getElementById('srtxt').style.color  = 'Red';
+            }
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <h3>What is the first year of college called? </h3>
+
+
+                <!-- TODO: Add multiple choice question here -->
+
+                <table style="background-color:white;">
+                    <tr>
+                        <td>
+                        <button id= 'frsh' onclick = "check_fr_answer_part1();" >Freshmen</button>
+                        </td>
+                        <td>
+                         <button id= 'sph' onclick = "check_sph_answer_part1();" >Sophomore</button>
+                        </td>
+                         <td>
+                         <button id= 'jr' onclick = "check_jr_answer_part1();" >Junior</button>
+                        </td>
+                         <td>
+                         <button id= 'sr' onclick = "check_sr_answer_part1();" >Senior</button>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td id='frshtxt' style="color: white;">Correct</td>
+                            <td id='sphtxt' style="color: white;">Incorrect</td>
+                            <td id='jrtxt' style="color: white;">Incorrect</td>
+                            <td id='srtxt' style="color: white;">Incorrect</td>
+                        </tr>
+
+                </table>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3> What is the second year of college called?</h3>
+                <input id="inp2" type="text" placeholder ="Your answer.."/>
+                <button id="textans">Check answer</button>
+                <p id="extramessage2"></p>
+            </div>
+        </div>
+    </body>
+</html>
