@@ -393,7 +393,7 @@ activity = 'exit'));
 
 -- DId the phone call got o any of thease cars?
 
--- potentail helper Bruce and Luca were both in parking lot just after the theftm they were both in the first flight out.
+-- potentail helper Bruce and Luca were both in parking lot just after the theft they were both in the first flight out.
 --Both Luca and Bruce took out money same day,
 
 
@@ -421,7 +421,7 @@ select name from people where license_plate IN (SELECT license_plate
 FROM bakery_security_logs
 WHERE month = 7 and day = 28 and activity ='exit';
 
--- who of the people that will fliy out and took iut money exited the parking lot that day.
+-- who of the people that will fly out and took outt money were the parking lot that day.
 select license_plate , hour, minute FROM bakery_security_logs
 WHERE month = 7 and day = 28 and activity ='exit' and
 license_plate IN (select license_plate from people where name in
@@ -451,7 +451,7 @@ SELECT name from people WHERE license_plate ='1106N58';
 +--------+
 | Taylor |
 +--------+
-
+-- since they were in the parking outside bakery. Kenny was never there so potentials thiefs are now Taylor, Bruce and Luca
 --when they did leave?
 select license_plate , hour, minute FROM bakery_security_logs
 WHERE month = 7 and day = 28 and activity ='exit' and
@@ -499,9 +499,7 @@ caller IN (select phone_number from people where id IN (select person_id from ba
 | Robin |
 | Doris |
 +-------+
-
-select name from people where phone_number IN (select receiver from phone_calls where month = 7 and day = 28 and
-duration <60 and caller =(367) 555-5533);
+-- Which phoner number does uca and Bruce have?
 
 sqlite> select phone_number from people where name = 'Bruce';
 +----------------+
@@ -515,6 +513,8 @@ sqlite> select phone_number from people where name = 'Luca';
 +----------------+
 | (389) 555-5198 |
 +----------------+
+
+
 
 select caller, receiver from phone_calls where month = 7 and day = 28 and
 duration <60;
@@ -537,6 +537,33 @@ duration <60;
 
 --Bruce is a the thief.
 --Robin is the helper.
+
+-- Who (if) did Bruce call that day in a call shorter than a minute?
+
+
+select receiver from phone_calls where month = 7 and day = 28 and
+   ...> duration <60 and caller ='(367) 555-5533';
++----------------+
+|    receiver    |
++----------------+
+| (375) 555-8161 |
++----------------+
+-- who did Bruce call?
+select name from people where phone_number = '(375) 555-8161';
++-------+
+| name  |
++-------+
+| Robin |
+
+-- Who (if) did Luca call that day in a call shorter than a minute?
+select receiver from phone_calls where month = 7 and day = 28 and duration <60 and caller ='(389) 555-5198';
+
+>none
+
+
+select name from people where phone_number IN (select receiver from phone_calls where month = 7 and day = 28 and
+duration <60 and caller ='(367) 555-5533)');
+
 
 -- He went on the plan to New York City
 
