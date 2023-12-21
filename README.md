@@ -40,4 +40,31 @@ There are five files in the extension
 
 All javascript is in the background.js and the manifest is version 3
 
+INSTALLATION
+Install the chrome extension by:
+1) Go to chrome://extensions/
+2) Click on developer mode
+3) Click on load unpacked and choose the folder where the source code is.
+4) When you are back in the page for managing the extensionm click on the details for Tabs Tamer and click on pin to toolbar.
+ Now you are ready to use the extension.
+
+ USER INSTRUTCION
+
+When clicking on the plus sign, all tabs that are open will close. The only tab that will still be open is the one that is in focus.
+All the url in the tabs are first added to the bookmark lists in a folder named todays date and that is  a subfolder to that folder called Tabs Tamer. If you click the + sign another time same day the tabs will be inlcuded in the same folder, but will only be bookmarekd if the are not already in the lists of bookmarks.
+
+In the file manifest.json tells us that we are using manifest version 3 and the permission for the api is tabs and bookmarks.
+
+In the javascript file background.js:
+The activation of the extesnion will happen with help of a listener that listens to if the + sign is clicked.
+
+When it is clicked we first get all the tabs by using:
+     chrome.tabs.query
+     chrome.bookmarks.getTree
+
+     We then find the active tab.
+     Bookmarks all tabs with help of the funciton bookmarkAlltabs.
+          First if the folder Tabs Tamer doesn't exist we create it.
+          We close all other tabs, with help of chrome.tabs,remove
+
 Enjoy!
