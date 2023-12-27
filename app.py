@@ -198,9 +198,8 @@ def quote():
     if request.method == "POST":
         symbol = request.form.get("symbol")
         # Ensure symbol is not blank
-  #        if symbol == "":
-  #          return apology("input is blank", 400)
-
+         if symbol == "":
+          return apology("input is blank", 400)
 
         stock_quote = lookup(symbol)
         if not stock_quote:
