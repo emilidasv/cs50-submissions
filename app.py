@@ -106,23 +106,29 @@ def buy():
 
         else:
             print('everything Ok so far')
-            print('cash')
-            print(user_cash)
-            userid= session["user_id"]
-            print(userid)
+            #print('cash')
+            #print(user_cash)
+            #userid= session["user_id"]
+            #print(userid)
             db.execute("INSERT INTO trades (userid, symbol, shares, price) VALUES(?, ?, ?, ?)",
                       session["user_id"], stock_quote['symbol'], int(shares_nbr), stock_quote['price'])
         #cash = user_cash[0]["cash"]
-            print('cash')
-            print(user_cash)
+            #print('cash')
+            #print(user_cash)
             userid= session["user_id"]
-            print(userid)
-
+            #print(userid)
+            #print(" ")
+            print(" ")
+            print(" ")
+            print(symbol)
+            print(shares_nbr)
+            print(total_cost)
 
             db.execute("UPDATE users SET cash = ? WHERE id = ?", user_cash - total_cost, session["user_id"])
             #db.execute("INSERT INTO trades( userid, symbol, shares, price) VALUES (:userid, :symbol, :shares, :price  )",
         #               id=session["user_id"], symbol=symbol, shares=shares, price=price)
-            flash('Bought!', 'symbol', 'shares', 'price', )
+
+            flash(f"Bought! Symbol: {symbol} Shares:{shares_nbr} Price: {total_cost} ")
             return redirect("/")
 
     # User reached route via GET
