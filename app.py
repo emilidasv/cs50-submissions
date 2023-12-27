@@ -122,7 +122,7 @@ def buy():
             db.execute("UPDATE users SET cash = ? WHERE id = ?", user_cash - total_cost, session["user_id"])
             #db.execute("INSERT INTO trades( userid, symbol, shares, price) VALUES (:userid, :symbol, :shares, :price  )",
         #               id=session["user_id"], symbol=symbol, shares=shares, price=price)
-            flash('Bought!')
+            flash('Bought!', 'symbol', 'shares', 'price', )
             return redirect("/")
 
     # User reached route via GET
