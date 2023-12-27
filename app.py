@@ -74,19 +74,19 @@ def buy():
         shares_nbr = request.form.get("shares")
 
         # Ensure symbol is not blank
- #       if symbol == "":
- #           return apology("MISSING SYMBOL", 400)
- #       if shares_nbr == "" or shares_nbr.isalpha():
- #           return apology("MISSING SHARES", 400)
- #       if not is_int(shares_nbr):
- #           return apology("fractional not supported", 400)
- #       if int(shares_nbr) <= 0:
- #           return apology("share number can't be negative number or zero!", 400)
+        if symbol == "":
+            return apology("MISSING SYMBOL", 400)
+        if shares_nbr == "" or shares_nbr.isalpha():
+            return apology("MISSING SHARES", 400)
+        if (not shares_nbr.isdigit()):
+            return apology("fractional not supported", 400)
+        if int(shares_nbr) <= 0:
+            return apology("share number can't be negative number or zero!", 400)
 
         stock_quote = lookup(symbol)
 
-        #if not stock_quote:
-        #    return apology("INVALID SYMBOL", 400)
+        if not stock_quote:
+            return apology("INVALID SYMBOL", 400)
 
         total_cost = int(shares_nbr) * stock_quote["price"]
         print(' ')
