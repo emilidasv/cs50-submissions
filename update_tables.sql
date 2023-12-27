@@ -1,0 +1,10 @@
+CREATE TABLE trades (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    userid INTEGER NOT NULL,
+    symbol TEXT NOT NULL,
+    shares INTEGER NOT NULL,
+    price NUMERIC NOT NULL,
+    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (userid) REFERENCES users(id)
+
+);
