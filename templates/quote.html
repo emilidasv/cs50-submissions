@@ -12,7 +12,7 @@
         <button type="submit">Get a quote</button>
     </form>
     {% if stock_quote %}
-    <h3>{{ stock_quote['name'] }} ({{stock_quote['symbol']}}) Price:{{stock_quote['price']}}</h3>
+    <h3>{{ stock_quote['name'] }} ({{stock_quote['symbol']}}) Price:{{stock_quote['price']|usd}}</h3>
     {% endif %}
 {% endblock %}
 
