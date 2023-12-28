@@ -281,10 +281,10 @@ def quote():
         stock_quote = lookup(symbol)
         if not stock_quote:
             return apology("INVALID SYMBOL", 400)
-       return render_template("quote.html", stock_quote=stock_quote)
+        return render_template("quote.html", stock_quote=stock_quote)
     # User reached route via GET
     else:
-       return render_template("quote.html")
+        return render_template("quote.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
