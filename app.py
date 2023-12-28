@@ -146,7 +146,51 @@ def history():
 
     return render_template("history.html", user_transactions=user_transactions)
 
+@app.route("/account", methods=["GET", "POST"])
+@login_required
+def account():
+    """Show username """
+    rows = db.execute("SELECT * FROM users WHERE id = ?", session["user_id"])
+    name=rows[0]['username']
+    print('name')
+    print(name)
+    oldhashcode =rows[0]['hash']
+    print('oldhashcode')
+    print(oldhashcode)
 
+    if request.method == "POST":
+           #print('passw')
+           #newname = request.form.get("newname")
+
+        # Ensure username was submitted
+        if not request.form.get("newname"):
+            return apology("must provide a new username", 403)
+
+        # Ensure password was submitted
+        elif not request.form.get("password"):
+            return apology("must provide password", 403)
+
+        # Query database for the new username
+        newrows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("newname"))
+
+        #make sure that this new username doesn;t exist in database
+        if len(newrows) != 0:
+            return apology("invalid username ", 403)
+
+        #make sure that the user gives correct passwrod
+        if not check_password_hash(rows[0]["hash"], request.form.get("password")):
+            return apology("invalid  password", 403)
+
+
+        #update new name in database
+        db.execute("UPDATE users SET username = ? WHERE id = ?", request.form.get("newname"), session["user_id"])
+
+
+        return render_template("account.html", user_name=request.form.get("newname"))
+
+
+    else:
+        return render_template("account.html", user_name=name)
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
