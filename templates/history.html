@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+History
+{% endblock %}
+
+{% block main %}
+<table>
+    <thead>
+    <tr>
+        <th> Id </th>
+        <th> Symbol </th>
+        <th> Shares </th>
+        <th> Price  </th>
+    </tr>
+<tbody>
+    {% for trans in user_transactions %}
+    <tr>
+        <td>{{trans.id}}</td>
+        <td>{{trans.symbol}}</td>
+        <td>{{trans.shares}}</td>
+        <td>{{trans.price|usd}}</td>
+
+    </tr>
+    {% endfor %}
+
+</tbody>
+
+
+</table>
+
+{% endblock %}
+
