@@ -282,7 +282,7 @@ def quote():
         if not stock_quote:
             return apology("INVALID SYMBOL", 400)
         return render_template("quote.html", stock_quote=stock_quote)
-    # User reached route via GET
+    #    # User reached route via GET
     else:
         return render_template("quote.html")
 
