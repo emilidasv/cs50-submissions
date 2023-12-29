@@ -1,3 +1,3 @@
 /* Choose your own question*
 which season has most eposides*/
-select max(episode_in_season) from episodes;
+SELECT max(episode_in_season) FROM episodes WHERE season > 2 AND season < 5;
