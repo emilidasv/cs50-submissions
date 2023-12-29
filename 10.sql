@@ -4,7 +4,6 @@ In 10.sql, write a SQL query to list the ids, titles, and production codes of al
 */
 SELECT id, title, production_code FROM episodes ORDER by production_code;
 
-/*
 
 
 
