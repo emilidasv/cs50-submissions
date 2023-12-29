@@ -1,3 +1,5 @@
+SELECT first_name AS Name FROM players WHERE birth_state ="CO" ORDER by debut DESC;
+
 /*
 In 10.sql, write SQL query to answer a question of your choice. This query should:
 Make use of AS to rename a column
