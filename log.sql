@@ -117,7 +117,56 @@ select * FROM packages WHERE from_address_id IS NULL and contents LIKE "%duck%";
 +------+---------------+-----------------+---------------+
 
 SELECT * FROM addresses WHERE ID =(select id FROM packages WHERE from_address_id IS NULL and contents LIKE "%duck%");
++------+-------------------+----------+
+|  id  |      address      |   type   |
++------+-------------------+----------+
+| 5098 | 1491 Wharf Street | Business |
++------+-------------------+----------+
+
+SELECT * FROM scans WHERE package_id = (select id FROM packages WHERE from_address_id IS NULL and contents LIKE "%duck%");
++-------+-----------+------------+------------+--------+----------------------------+
+|  id   | driver_id | package_id | address_id | action |         timestamp          |
++-------+-----------+------------+------------+--------+----------------------------+
+| 30123 | 10        | 5098       | 50         | Pick   | 2023-10-24 08:40:16.246648 |
+| 30140 | 10        | 5098       | 348        | Drop   | 2023-10-24 10:08:55.610754 |
++-------+-----------+------------+------------+--------+----------------------------+
+
+SELECT type FROM addresses WHERE id = 348;
++----------------+
+|      type      |
++----------------+
+| Police Station |
++----------------+;
+
 
 
 -- *** The Forgotten Gift ***
+
+/*
+Oh, excuse me, Clerk. I had sent a mystery gift, you see, to my wonderful granddaughter, off at 728 Maple Place.
+That was about two weeks ago. Now the delivery date has passed by seven whole days and I hear she still waits,
+her hands empty and heart filled with anticipation. I’m a bit worried wondering where my package has gone.
+I cannot for the life of me remember what’s inside, but I do know it’s filled to the brim with my love for her.
+Can we possibly track it down so it can fill her day with joy? I did send it from my home at 109 Tileston Street.
+*/
+SELECT id, to_address_id, contents FROM packages WHERE from_address_id = (SELECT id FROM addresses WHERE address = "109 Tileston Street");
++------+---------------+----------+
+|  id  | to_address_id | contents |
++------+---------------+----------+
+| 9523 | 4983          | Flowers  |
++------+---------------+----------+
+sqlite> select address from addresses WHERE id = 4983;
++-----------------+
+|     address     |
++-----------------+
+| 728 Maple Place |
+
+select * from scans WHERE package_id =9523;
++-------+-----------+------------+------------+--------+----------------------------+
+|  id   | driver_id | package_id | address_id | action |         timestamp          |
++-------+-----------+------------+------------+--------+----------------------------+
+| 10432 | 11        | 9523       | 9873       | Pick   | 2023-08-16 21:41:43.219831 |
+| 10500 | 11        | 9523       | 7432       | Drop   | 2023-08-17 03:31:36.856889 |
+| 12432 | 17        | 9523       | 7432       | Pick   | 2023-08-23 19:41:47.913410 |
++-------+-----------+------------+------------+--------+----------------------------+
 
