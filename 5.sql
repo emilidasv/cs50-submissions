@@ -6,5 +6,5 @@ number of public schools to least. If two cities have the same number of public 
 */
 select city, count(name) from schools
 WHERE type LIKE '%pub%'
-GROUP By city HAVING COUNT(name) < 3
+GROUP By city HAVING COUNT(name) <= 3
 order by count(name) DESC, city ASC;
