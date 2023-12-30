@@ -6,3 +6,7 @@ Keep in mind that not all schools in the schools table are considered traditiona
 Massachusetts also recognizes charter schools, which (according to DESE!) are considered distinct.
 */
 SELECT name, city from schools WHERE type LIKE'%public%';
+
+/*
+Executing 1.sql results in a table with 2 columns and 1,761 rows.
+*/
