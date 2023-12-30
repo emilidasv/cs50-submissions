@@ -88,6 +88,36 @@ SELECT * FROM addresses WHERE id = 854;
 
 -- *** The Devious Delivery ***
 
+/*
+Good day to you, deliverer of the mail. You might remember that not too long ago I made my way over from the town of Fiftyville.
+I gave a certain box into your reliable hands and asked you to keep things low. My associate has been expecting the package for a while now.
+ And yet, it appears to have grown wings and flown away. Ha! Any chance you could help clarify this mystery?
+Afraid there’s no “From” address. It’s the kind of parcel that would add a bit more… quack to someone’s bath times, if you catch my drift.
+*/
+select DISTINCT(type) FROM addresses;
++----------------+
+|      type      |
++----------------+
+| Residential    |
+| Business       |
+| Warehouse      |
+| Police Station |
++----------------+
+ select * FROM packages WHERE from_address_id IS NULL;
++------+---------------+-----------------+---------------+
+|  id  |   contents    | from_address_id | to_address_id |
++------+---------------+-----------------+---------------+
+| 5098 | Duck debugger | NULL            | 50            |
++------+---------------+-----------------+---------------+
+select * FROM packages WHERE from_address_id IS NULL and contents LIKE "%duck%";
++------+---------------+-----------------+---------------+
+|  id  |   contents    | from_address_id | to_address_id |
++------+---------------+-----------------+---------------+
+| 5098 | Duck debugger | NULL            | 50            |
++------+---------------+-----------------+---------------+
+
+SELECT * FROM addresses WHERE ID =(select id FROM packages WHERE from_address_id IS NULL and contents LIKE "%duck%");
+
 
 -- *** The Forgotten Gift ***
 
