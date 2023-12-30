@@ -7,14 +7,14 @@ You’ve been asked to find the average of this set of averages, weighting all d
 */
 
 select avg(per_pupil_expenditure) as 'Average District Per-Pupil Expenditure' from expenditures;
-select avg(per_pupil_expenditure) as 'Average District Per-Pupil Expenditure' , district_id from expenditures group by district_id;
+/*select avg(per_pupil_expenditure) as 'Average District Per-Pupil Expenditure' , district_id from expenditures group by district_id;
 
 select avg(expenditures.per_pupil_expenditure) , districts.name as 'Average District Per-Pupil Expenditure' from
 expenditures JOIN districts ON expenditures.district_id = districts.id group by districts.name;
 
 select count(*) from
 expenditures JOIN districts ON expenditures.district_id = districts.id;
-
+*/
 /**/
 Executing 3.sql results in a table with 1 column and 1 row.
 Executing 4.sql results in a table with 2 columns and 10 rows.
