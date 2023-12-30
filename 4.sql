@@ -8,4 +8,4 @@ select count(schools.name) , districts.name from schools JOIN districts ON schoo
 WHERE schools.type LIKE '%pub%' group by districts.id order by count(schools.name) desc , schools.name DESC limit 10;
 */
 
-select count(name) , city from schools WHERE type LIKE '%pub%' group by city order by count(name) DESC, city DESC limit 10;
+select count(name) , city from schools WHERE type LIKE '%pub%' group by city order by count(name) DESC, city ASC limit 10;
