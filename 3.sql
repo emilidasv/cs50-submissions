@@ -16,7 +16,7 @@ expenditures JOIN districts ON expenditures.district_id = districts.id group by 
 select count(*) from
 expenditures JOIN districts ON expenditures.district_id = districts.id;
 */
-/**/
+/*
 Executing 3.sql results in a table with 1 column and 1 row.
 Executing 4.sql results in a table with 2 columns and 10 rows.
 Executing 5.sql results in a table with 2 columns and 201 rows.
@@ -30,5 +30,5 @@ Executing 12.sql results in a table with 3 columns and 65 rows.
 */
 
 
-*/
+
 
