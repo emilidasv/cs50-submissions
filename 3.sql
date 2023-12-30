@@ -7,6 +7,7 @@ You’ve been asked to find the average of this set of averages, weighting all d
 */
 
 select avg(per_pupil_expenditure) as 'Average District Per-Pupil Expenditure' from expenditures;
+
 /*select avg(per_pupil_expenditure) as 'Average District Per-Pupil Expenditure' , district_id from expenditures group by district_id;
 
 select avg(expenditures.per_pupil_expenditure) , districts.name as 'Average District Per-Pupil Expenditure' from
