@@ -1,0 +1,172 @@
+
+-- *** The Lost Letter ***
+/*
+Clerk, my name’s Anneke. I live over at 900 Somerville Avenue. Not long ago, I sent out a special letter.
+It’s meant for my friend Varsha. She’s starting a new chapter of her life at 2 Finnegan Street, uptown.
+(That address, let me tell you: it was a bit tricky to get right the first time.) The letter is a congratulatory note—a
+cheery little paper hug from me to her, to celebrate this big move of hers. Can you check if it’s made its way to her yet?
+*/
+
+SELECT id FROM addresses WHERE "address" = '900 Somerville Avenue';
+/* address_id =432*/
+SELECT id FROM addresses WHERE "address" = '2 Finnegan Street';
+/* no result  hm*/
+
+SELECT id, address FROM addresses WHERE "address" LIKE '%2 Fin%';
+/* id 854
++-----+-------------------+
+| id  |      address      |
++-----+-------------------+
+| 854 | 2 Finnigan Street |
++-----+-------------------+
+misspelled?
+*/
+
+
+
+SELECT id FROM packages WHERE from_address_id = 432;
+SELECT address_id,action, driver_id FROM scans WHERE id IN ( SELECT id FROM packages WHERE from_address_id = 432);
+
+SELECT contents, from_address_id, to_address_id FROM packages WHERE from_address_id IN (4792, 6885, 9670,3852);
+
+SELECT addresss FROM addresses WHERE id IN (SELECT address_id FROM scans WHERE package_id IN(384,2437, 3529, 5436));
+/*+------------------------+
+|        address         |
++------------------------+
+| 900 Somerville Avenue  |
+| 25 Hancock Street      |
+| 59 Ted Williams Way    |
+| 73 Yarmouth Place      |
+| 2 Finnigan Street      |
+| 91 Ward Court          |
+| 388 Jackson Avenue     |
+| 77 Waverly Place       |
+| 24 Morris Street       |
+| 558 Camden Street      |
+| 950 Brannon Harris Way |
+| 8760 Nay Street        |
++------------------------+
+SELECT contents, from_address_id, to_address_id FROM packages WHERE to_address_id = 854;
++-----------------------+-----------------+---------------+
+|       contents        | from_address_id | to_address_id |
++-----------------------+-----------------+---------------+
+| Congratulatory letter | 432             | 854           |
+| Push pins             | 7376            | 854           |
++-----------------------+-----------------+---------------+
+the packages was deliverd to wrong adress.
+*/
+
+
+SELECT * FROM packages WHERE
+from_address_id = (SELECT id FROM addresses WHERE "address" = '900 Somerville Avenue') AND
+to_address_id = (SELECT id FROM addresses WHERE "address" LIKE '2 Fin%');
+
++-----+-----------------------+-----------------+---------------+
+| id  |       contents        | from_address_id | to_address_id |
++-----+-----------------------+-----------------+---------------+
+| 384 | Congratulatory letter | 432             | 854           |
++-----+-----------------------+-----------------+---------------+
+
+SELECT * FROM scans WHERE package_id = (
+    SELECT id FROM packages WHERE
+from_address_id = (SELECT id FROM addresses WHERE "address" = '900 Somerville Avenue') AND
+to_address_id = (SELECT id FROM addresses WHERE "address" LIKE '2 Fin%')
+);
++----+-----------+------------+------------+--------+----------------------------+
+| id | driver_id | package_id | address_id | action |         timestamp          |
++----+-----------+------------+------------+--------+----------------------------+
+| 54 | 1         | 384        | 432        | Pick   | 2023-07-11 19:33:55.241794 |
+| 94 | 1         | 384        | 854        | Drop   | 2023-07-11 23:07:04.432178 |
++----+-----------+------------+------------+--------+----------------------------+
+SELECT * FROM addresses WHERE id = 854;
++-----+-------------------+-------------+
+| id  |      address      |    type     |
++-----+-------------------+-------------+
+| 854 | 2 Finnigan Street | Residential |
++-----+-------------------+-------------+
+
+
+-- *** The Devious Delivery ***
+
+/*
+Good day to you, deliverer of the mail. You might remember that not too long ago I made my way over from the town of Fiftyville.
+I gave a certain box into your reliable hands and asked you to keep things low. My associate has been expecting the package for a while now.
+ And yet, it appears to have grown wings and flown away. Ha! Any chance you could help clarify this mystery?
+Afraid there’s no “From” address. It’s the kind of parcel that would add a bit more… quack to someone’s bath times, if you catch my drift.
+*/
+select DISTINCT(type) FROM addresses;
++----------------+
+|      type      |
++----------------+
+| Residential    |
+| Business       |
+| Warehouse      |
+| Police Station |
++----------------+
+ select * FROM packages WHERE from_address_id IS NULL;
++------+---------------+-----------------+---------------+
+|  id  |   contents    | from_address_id | to_address_id |
++------+---------------+-----------------+---------------+
+| 5098 | Duck debugger | NULL            | 50            |
++------+---------------+-----------------+---------------+
+select * FROM packages WHERE from_address_id IS NULL and contents LIKE "%duck%";
++------+---------------+-----------------+---------------+
+|  id  |   contents    | from_address_id | to_address_id |
++------+---------------+-----------------+---------------+
+| 5098 | Duck debugger | NULL            | 50            |
++------+---------------+-----------------+---------------+
+
+SELECT * FROM addresses WHERE ID =(select id FROM packages WHERE from_address_id IS NULL and contents LIKE "%duck%");
++------+-------------------+----------+
+|  id  |      address      |   type   |
++------+-------------------+----------+
+| 5098 | 1491 Wharf Street | Business |
++------+-------------------+----------+
+
+SELECT * FROM scans WHERE package_id = (select id FROM packages WHERE from_address_id IS NULL and contents LIKE "%duck%");
++-------+-----------+------------+------------+--------+----------------------------+
+|  id   | driver_id | package_id | address_id | action |         timestamp          |
++-------+-----------+------------+------------+--------+----------------------------+
+| 30123 | 10        | 5098       | 50         | Pick   | 2023-10-24 08:40:16.246648 |
+| 30140 | 10        | 5098       | 348        | Drop   | 2023-10-24 10:08:55.610754 |
++-------+-----------+------------+------------+--------+----------------------------+
+
+SELECT type FROM addresses WHERE id = 348;
++----------------+
+|      type      |
++----------------+
+| Police Station |
++----------------+;
+
+
+
+-- *** The Forgotten Gift ***
+
+/*
+Oh, excuse me, Clerk. I had sent a mystery gift, you see, to my wonderful granddaughter, off at 728 Maple Place.
+That was about two weeks ago. Now the delivery date has passed by seven whole days and I hear she still waits,
+her hands empty and heart filled with anticipation. I’m a bit worried wondering where my package has gone.
+I cannot for the life of me remember what’s inside, but I do know it’s filled to the brim with my love for her.
+Can we possibly track it down so it can fill her day with joy? I did send it from my home at 109 Tileston Street.
+*/
+SELECT id, to_address_id, contents FROM packages WHERE from_address_id = (SELECT id FROM addresses WHERE address = "109 Tileston Street");
++------+---------------+----------+
+|  id  | to_address_id | contents |
++------+---------------+----------+
+| 9523 | 4983          | Flowers  |
++------+---------------+----------+
+sqlite> select address from addresses WHERE id = 4983;
++-----------------+
+|     address     |
++-----------------+
+| 728 Maple Place |
+
+select * from scans WHERE package_id =9523;
++-------+-----------+------------+------------+--------+----------------------------+
+|  id   | driver_id | package_id | address_id | action |         timestamp          |
++-------+-----------+------------+------------+--------+----------------------------+
+| 10432 | 11        | 9523       | 9873       | Pick   | 2023-08-16 21:41:43.219831 |
+| 10500 | 11        | 9523       | 7432       | Drop   | 2023-08-17 03:31:36.856889 |
+| 12432 | 17        | 9523       | 7432       | Pick   | 2023-08-23 19:41:47.913410 |
++-------+-----------+------------+------------+--------+----------------------------+
+
