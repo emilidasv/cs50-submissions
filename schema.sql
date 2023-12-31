@@ -22,7 +22,7 @@ CREATE TABLE "companies" (
     "company_name" TEXT NOT NULL,
     "company_location" TEXT,
     "industry" TEXT NOT NULL,
-    "titles" TEXT;
+    "titles" TEXT,
     PRIMARY KEY("company_id")
 );
 
@@ -30,9 +30,9 @@ CREATE TABLE "connections" (
     "connection_id" NUMERIC NOT NULL,
     "school_id" INTEGER,
     "company_id" INTEGER,
-    "person_id" INTEGER;
-    "start_date" NUMERIC,
-    "end_date" NUMERIC,
+    "person_id" INTEGER,
+    "start_date" TEXT,
+    "end_date" TEXT,
     "type" TEXT NOT NULL CHECK("type" IN ('School','Company','Person')),
     FOREIGN KEY("company_id") REFERENCES "companies"("company_id"),
     FOREIGN KEY("school_id") REFERENCES "schools"("schoool_id"),
