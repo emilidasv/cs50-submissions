@@ -11,8 +11,9 @@ Keep in mind the lessons you’ve learned in 10.sql and 11.sql!
 
 */
 
-SELECT players.first_name, players.last_name FROM players
+
+SELECT players.first_name, players.last_name, salaries.salary/performances.h, performances.rbi FROM players
 JOIN salaries ON(players.id= salaries.player_id)
 JOIN performances ON(players.id=performances.player_id AND salaries.year=performances.year)
-WHERE salaries.year="2001" and performances.h >0
-ORDER by salaries.salary/performances.h,  performances.rbi, players.id, players.last_name limit 10;
+WHERE salaries.year="2001" and performances.h >0 and performances.rbi>0
+ORDER by salaries.salary/performances.h, salaries.salary/performances.rbi, players.id, players.last_name limit 10;
