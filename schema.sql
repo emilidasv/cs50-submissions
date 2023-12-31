@@ -39,7 +39,7 @@ CREATE TABLE "school_connections" (
     "start_date" TEXT,
     "end_date" TEXT,
     "degree" TEXT,
-    PRIMARY KEY("person_id", school_id)
+    PRIMARY KEY("person_id", "school_id")
     FOREIGN KEY("person_id") REFERENCES "users"("id"),
     FOREIGN KEY("school_id") REFERENCES "users"("id")
 );
@@ -50,7 +50,7 @@ CREATE TABLE "company_connections" (
     "start_date" TEXT,
     "end_date" TEXT,
     "title" TEXT,
-    PRIMARY KEY("person_id", company_id)
+    PRIMARY KEY("person_id", "company_id")
     FOREIGN KEY("person_id") REFERENCES "users"("id"),
     FOREIGN KEY("company_id") REFERENCES "companies"("company_id")
 );
