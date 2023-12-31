@@ -7,7 +7,7 @@ Your query should return a table with one column, the salary of the player.
 */
 SELECT salaries.salary FROM salaries
 JOIN performances ON (salaries.player_id = performances.player_id)
-WHERE performances.year="2001" and performances.hr = (SELECT MAX(HR) FROM performances WHERE year="2001")
+WHERE salaries.year="2001" and performances.hr = (SELECT MAX(HR) FROM performances WHERE year="2001")
 ORDER by salaries.salary DESC LIMIT 1;
 
 
