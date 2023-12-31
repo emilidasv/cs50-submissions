@@ -14,14 +14,11 @@ As in 10.sql, ensure that the salary’s year and the performance’s year match
 You may assume, for simplicity, that a player will only have one salary and one performance in 2001.
 */
 
-SELECT players.first_name, players.last_name, performances.h as "dollars per hit" 
-/*
-12.sql
-Hits are great, but so are RBIs! In 12.sql, write a SQL query to find the players among the 10 least expensive players per hit and among the 10 least expensive players per RBI in 2001.
+SELECT players.first_name, players.last_name, salaries.salary/performances.h as "dollars per hit" FROM players
+JOIN salaries ON(players.id= salaries.player_id)
+JOIN performances ON(players.id=performances.player_id AND salaries.year=performances.year)
+WHERE salaries.year ="2001" and performances.h >0
+ORDER BY "dollars per hit" , players.first_name, players.first_name;
 
-Your query should return a table with two columns, one for the players’ first names and one of their last names.
-You can calculate a player’s salary per RBI by dividing their 2001 salary by their number of RBIs in 2001.
-You may assume, for simplicity, that a player will only have one salary and one performance in 2001.
-Order your results by player ID, least to greatest (or alphabetically by last name, as both are the same in this case!).
-Keep in mind the lessons you’ve learned in 10.sql and 11.sql!/*
-*/
+
+
