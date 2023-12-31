@@ -16,7 +16,6 @@ CREATE TABLE "schools" (
     "type" TEXT NOT NULL CHECK("type" IN ('Elementary School','Middle School','High School','College','University','Community College','Other')),
     PRIMARY KEY("school_id")
 );
-/**/
 
 CREATE TABLE "companies" (
     "company_id" INTEGER,
@@ -27,12 +26,6 @@ CREATE TABLE "companies" (
 );
 
 CREATE TABLE "user_connections" (
-    "person1_id" INTEGER NOT NULL,
-    "person2_id" INTEGER NOT NULL,
-    PRIMARY KEY("person1_id", person2_id)
-);
-
-CREATE TABLE "company_connections" (
     "person1_id" INTEGER NOT NULL,
     "person2_id" INTEGER NOT NULL,
     PRIMARY KEY("person1_id", person2_id)
