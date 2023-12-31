@@ -21,7 +21,7 @@ Example table
 
 SELECT players.first_name, players.last_name, salaries.salary, performances.hr, salaries.year FROM players
 JOIN salaries ON(players.id= salaries.player_id)
-JOIN performances ON(players.id=performances.player_id)
+JOIN performances ON(players.id=performances.player_id AND salaries.year=performances.year)
 GROUP by performances.hr
 ORDER BY players.id asc, performances.hr DESC, salaries.salary DESC LIMIT 5;
 
