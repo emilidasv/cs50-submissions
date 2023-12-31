@@ -12,7 +12,7 @@ CREATE TABLE "schools" (
     "school_name" TEXT NOT NULL,
     "school_location" TEXT,
     "founded" NUMERIC,
-    "type" TEXT NOT NULL CHECK("type" IN ('Elementary School','Middle School','High School','College','University','Community'College,'Other')),
+    "type" TEXT NOT NULL CHECK("type" IN ('Elementary School','Middle School','High School','College','University','Community College','Other')),
     "degrees" TEXT,
     PRIMARY KEY("school_id")
 );
