@@ -11,4 +11,3 @@ WHERE performances.year="2001" and performances.hr = (SELECT MAX(HR) FROM perfor
 ORDER by salaries.salary DESC LIMIT 1;
 
 
-/*

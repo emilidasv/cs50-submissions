@@ -1,3 +1,4 @@
+/*
 9.sql
 What salaries are other teams paying? In 9.sql, write a SQL query to find the 5 lowest paying teams (by average salary) in 2001.
 
