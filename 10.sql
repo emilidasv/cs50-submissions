@@ -22,7 +22,7 @@ Example table GROUP by performances.hr
 SELECT players.first_name, players.last_name, salaries.salary, performances.hr, salaries.year FROM players
 JOIN salaries ON(players.id= salaries.player_id)
 JOIN performances ON(players.id=performances.player_id AND salaries.year=performances.year)
-ORDER BY players.id asc, performances.hr DESC, salaries.salary DESC LIMIT 5;
+ORDER BY players.id asc, salaries.year DESC, performances.hr DESC, salaries.salary DESC LIMIT 5;
 
 
 /*
