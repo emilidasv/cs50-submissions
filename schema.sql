@@ -28,9 +28,9 @@ CREATE TABLE "companies" (
 CREATE TABLE "user_connections" (
     "person1_id" INTEGER NOT NULL,
     "person2_id" INTEGER NOT NULL,
-    PRIMARY KEY("person1_id", person2_id)
+    PRIMARY KEY("person1_id", person2_id),
     FOREIGN KEY("person1_id") REFERENCES "users"("id"),
-    FOREIGN KEY("person2_id") REFERENCES "users"("id"),
+    FOREIGN KEY("person2_id") REFERENCES "users"("id")
 );
 
 CREATE TABLE "school_connections" (
@@ -39,18 +39,18 @@ CREATE TABLE "school_connections" (
     "start_date" TEXT,
     "end_date" TEXT,
     "degree" TEXT,
-    PRIMARY KEY("person_id", "school_id")
+    PRIMARY KEY("person_id", "school_id"),
     FOREIGN KEY("person_id") REFERENCES "users"("id"),
     FOREIGN KEY("school_id") REFERENCES "users"("id")
 );
 
 CREATE TABLE "company_connections" (
-    "person_id" INTEGER NOT NULL,
-    "company_id" INTEGER NOT NULL,
-    "start_date" TEXT,
-    "end_date" TEXT,
+    "person_id" INTEGER,
+    "company_id" INTEGER,
+    "start_date" DATE,
+    "end_date" DATE,
     "title" TEXT,
-    PRIMARY KEY("person_id", "company_id")
+    PRIMARY KEY("person_id", "company_id"),
     FOREIGN KEY("person_id") REFERENCES "users"("id"),
     FOREIGN KEY("company_id") REFERENCES "companies"("company_id")
 );
