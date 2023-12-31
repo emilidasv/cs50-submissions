@@ -10,4 +10,4 @@ Your query should return a table with two columns, one for year and one for home
 SELECT performances.year, performances.HR FROM performances
 JOIN players ON( performances.player_id = players.id)
 WHERE players.first_name LIKE "%KEN%" AND players.last_name LIKE "%Griffey%" AND players.birth_year = "1969"
-GROUP By performances.year ORDER BY performances.year;
+GROUP By performances.year ORDER BY performances.year DESC;
