@@ -15,6 +15,6 @@ WHERE username = 'admin';
 
 UPDATE user_logs SET old_username='emily33' WHERE id=52;
 UPDATE user_logs SET new_username='emily33' WHERE id=52;
-UPDATE user_logs SET old_password='e10adc3949ba59abbe56e057f20f883e' WHERE id=52;
+/*UPDATE user_logs SET old_password='e10adc3949ba59abbe56e057f20f883e' WHERE id=52;*/
 
 
