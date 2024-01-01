@@ -10,9 +10,9 @@ CREATE TABLE "meteorites_temp" (
     long NUMERIC,
     PRIMARY KEY("id")
 );
-
+/*
 .import --csv --skip 1 meteroites.csv
-
+*/
 /* celan up all zero to Null */
 SELECT * from meteorites_temp where mass='0';
 UPDATE meteorites_temp SET mass = NULL WHERE mass='0';
