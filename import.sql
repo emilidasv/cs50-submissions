@@ -11,7 +11,7 @@ CREATE TABLE "meteorites_temp" (
     PRIMARY KEY("id")
 );
 
-.import --csv --skip 1 meteroites.csv
+.import --csv --skip 1 meteorites.csv meteorites_temp
 
 UPDATE meteorites_temp SET mass = NULL WHERE mass='0';
 UPDATE meteorites_temp SET long = NULL WHERE long = '0';
