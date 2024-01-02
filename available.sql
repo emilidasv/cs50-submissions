@@ -11,6 +11,4 @@ date, from the availabilities table, which is the date of the availability.
 CREATE VIEW "available" AS
 SELECT listings.id as "id", listings.property_type as "property_type", listings.host_name as "host_name", "availabilities"."date" as "date" FROM listings
 JOIN availabilities ON (availabilities.listing_id=listings.id)
-WHERE "availabilities"."available" ="TRUE" AND "availabilities"."date" LIKE '%-06-%'
-GROUP BY listings.id;
-
+WHERE "availabilities"."available" ="TRUE";
