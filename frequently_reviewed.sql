@@ -12,8 +12,8 @@ followed by host_name (in alphabetical order).
 */
 
 CREATE VIEW "frequently_reviewed" AS
-SELECT listings.id, listings.property_type, listings.host_name, COUNT("reviews"."id") as "amount_reviews" FROM listings
+SELECT listings.id as "id", listings.property_type as "property_type", listings.host_name as "host_name",COUNT("reviews"."id") as "reviews" FROM listings
 JOIN reviews ON(reviews.listing_id=listings.id)
 GROUP BY listings.id
-ORDER BY amount_reviews DESC, listings.property_type, listings.host_name LIMIT 100;
+ORDER BY reviews DESC, listings.property_type, listings.host_name LIMIT 100;
 

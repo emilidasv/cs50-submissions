@@ -10,4 +10,7 @@ days_vacant, which is the number of days in June of 2023, that the given listing
 */
 
 CREATE VIEW "june_vacancies" AS
-SELECT listings.id, listings.property_type, listings.host_name, availabilities.days_vacant
+SELECT listings.id as "id", listings.property_type as "property_type", listings.host_name as "host_name", COUNT("availabilities"."date") as "days_vacant"FROM listings
+JOIN availabilities ON (availabilities.id=listings.id)
+WHERE "availabilities"."available" ="TRUE" AND "availabilities"."date" LIKE '%-06-%'
+GROUP BY listings.id;
