@@ -4,6 +4,6 @@ Find when the message with ID 151 expires. You may use the message’s ID direct
 
 Ensure your query uses the index automatically created on the primary
 key column of the messages table.
-*/
-EXPLAIN QUERY PLAN
+
+EXPLAIN QUERY PLAN*/
 SELECT expires_timestamp FROM messages WHERE ID=151;

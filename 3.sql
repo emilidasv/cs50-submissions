@@ -8,8 +8,8 @@ Ensure your query uses the search_messages_by_from_user_id index, which is defin
 
 CREATE INDEX "search_messages_by_from_user_id"
 ON "messages"("from_user_id");
-*/
-EXPLAIN QUERY PLAN
+
+EXPLAIN QUERY PLAN*/
 SELECT to_user_id, count(messages.id) as "amount" FROM messages
 JOIN users ON(messages.from_user_id=users.id)
 WHERE users.username="creativewisdom377"
