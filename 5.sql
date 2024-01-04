@@ -12,7 +12,7 @@ Recall that, in SQL, you can use certain keywords to find the intersection of tw
 
 */
 
-/*EXPLAIN QUERY PLAN*/
+/*EXPLAIN QUERY PLAN
 
 SELECT "frusername"  as "username" FROM (
 SELECT frID , users.username as "frusername" from (
@@ -26,4 +26,18 @@ SELECT friends.friend_id from users
 JOIN friends ON(friends.user_id = users.id)
 WHERE users.id=(SELECT id FROM users WHERE username="exceptionalinspiration482"))
 JOIN users ON (users.id=frID)
-);
+)
+;
+
+*/
+
+
+
+SELECT friendID from (
+SELECT friends.friend_id as "friendID" from users
+JOIN friends ON(friends.user_id = users.id)
+WHERE users.id=(SELECT id FROM users WHERE username="lovelytrust487")
+INTERSECT
+SELECT friends.friend_id from users
+JOIN friends ON(friends.user_id = users.id)
+WHERE users.id=(SELECT id FROM users WHERE username="exceptionalinspiration482"));
