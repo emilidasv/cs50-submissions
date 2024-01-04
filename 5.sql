@@ -12,7 +12,8 @@ Recall that, in SQL, you can use certain keywords to find the intersection of tw
 
 */
 
-EXPLAIN QUERY PLAN
+/*EXPLAIN QUERY PLAN*/
+
 SELECT "frusername"  as "username" FROM (
 SELECT frID , users.username as "frusername" from (
 SELECT friends.friend_id as "frID" from users
