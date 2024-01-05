@@ -1,1 +1,0 @@
-SELECT AVG(rating) from ratings WHERE movie_id IN (SELECT id FROM Movies WHERE year = 2012);
