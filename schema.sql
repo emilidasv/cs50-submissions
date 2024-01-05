@@ -12,7 +12,7 @@ CREATE TABLE `schools` (
     `school_id` AUTO_INCREMENT,
     `school_name` VARCHAR(32) NOT NULL,
     `school_location` VARCHAR(32),
-    `founded` DATE,
+    `founded` YEAR,
     `type` ENUM ('Elementary School','Middle School','High School','College','University','Community College','Other')) NOT NULL,
     PRIMARY KEY(`school_id`)
 );
