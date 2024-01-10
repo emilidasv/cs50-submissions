@@ -1,4 +1,4 @@
-name = input("What's your name? ")
-print("hello,")
+name = input("Give me a text ")
+
 print(name.lower())
 
