@@ -1,18 +1,12 @@
-m = input("m:")
+def main():
+   m = input("m:")
+   print(m)
 
-c = 300000000
-E= c*c*int(m)
-print("E:", E)
+   E = calculate_E(m)
+   print("E:", calculate_E(m))
 
-
-#def main():
-#    m = input("m:")
-#    PRINT
-#    c = 300000
-
-#print("E:")
-#print(calculate_E(m))
-
-#def calculate_E(m):
-#    E=int(m)*c*c
-#    return E
+def calculate_E(p):
+    c = 300000000
+    E= c*c*int(p)
+    return E
+main()
