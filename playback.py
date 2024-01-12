@@ -13,7 +13,7 @@ name = input()
 #print(" ".join(string.split()))
 
 newstring = name.split()
-print(newstring)
+#print(newstring)
 newstring = "   ".join(newstring)
 print(newstring)
 
