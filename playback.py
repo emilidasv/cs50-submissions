@@ -1,5 +1,5 @@
-name = input("Enter a text? ")
-
+# name = input("Enter a text? ")
+name = input()
 #print(name)
 #name = ",".join(name)
 #print(name)
