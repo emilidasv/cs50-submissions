@@ -1,6 +1,5 @@
 def main():
    m = input("m:")
-   print(m)
 
    E = calculate_E(m)
    print("E:", calculate_E(m))
