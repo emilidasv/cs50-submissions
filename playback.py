@@ -14,6 +14,6 @@ name = input()
 
 newstring = name.split()
 #print(newstring)
-newstring = "   ".join(newstring)
+newstring = "...".join(newstring)
 print(newstring)
 
