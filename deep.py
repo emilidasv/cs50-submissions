@@ -1,0 +1,5 @@
+text = input("What is the Great Question of Life, the Universe and Everything")
+if text == "42" : print("yes")
+elif text == "forty two" :print ("yes")
+elif text == "forty-two" :print ("yes")
+else: print("n0")
