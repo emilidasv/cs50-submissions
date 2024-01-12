@@ -11,7 +11,9 @@ def dollars_to_float(d):
 
 def percent_to_float(p):
     pr=float(p)
+    pr=pr/100
+    pr=float(pr)
 
-    return pr/100
+    return pr
 
 main()
