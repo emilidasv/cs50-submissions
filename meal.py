@@ -14,7 +14,7 @@ def convert(time):
      elif ((int(hours) >=12) and (int(hours) <=13)) :print("lunch time")
      elif ((int(hours) >=18) and (int(hours) <=19)) : print("dinner time")
 
-return hours+min
+return print(hours+min)
 
 if __name__ == "__main__":
     main()
