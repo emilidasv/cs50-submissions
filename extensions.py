@@ -11,8 +11,11 @@ lenth=len(file_name)
 
 extension_name= file_name[number:lenth]
  #are ther more than one period
-number = extension_name.find('.')
+if file_name.count(".") > 1:
 
+    number = extension_name.find('.')
+    lenth=len(extension_name)
+    extension_name= extension_name[number:lenth]
 
 
 if extension_name == ".gif": print("image/gif")
