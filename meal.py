@@ -7,7 +7,6 @@ def main():
 def convert(time):
      hours, minutes = time.split(":")
 
-     if int(hours) >= 7 : print(hours)
 
      if ((int(hours) >= 7)  and (int(hours) <= 8)) : print("breakfast time")
      elif ((int(hours) >12) and (int(hours) <13)) :print("lunch time")
