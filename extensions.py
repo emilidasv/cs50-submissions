@@ -4,16 +4,15 @@ file_name=input("Filename:")
 file_name= file_name.lower()
 file_name=file_name.strip()
 
-if file_name.count(".") = 1:
-{number = file_name.find('.')
+#if file_name.count(".") = 1:
+number = file_name.find('.')
  #get the extesnion name
- lenth=len(file_name)
+lenth=len(file_name)
 
- extension_name= file_name[number:lenth]
+extension_name= file_name[number:lenth]
  #are ther more than one period
- number = extension.find('.')
-}
-elif file_name.count(".") = 2
+number = extension_name.find('.')
+
 
 
 if extension_name == ".gif": print("image/gif")
