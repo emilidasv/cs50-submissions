@@ -36,8 +36,9 @@ def main():
 #    print(fruit_dict["Watermelon"])
 
     text = input("Item:")
-    cal = fruit_dict[text.lower()]
-    print("calories:",cal)
+    if text in fruit_dict:
+        cal = fruit_dict[text.lower()]
+        print("calories:",cal)
 
 
 if __name__ == "__main__":
