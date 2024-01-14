@@ -11,32 +11,32 @@
 
 def main():
     fruit_dict = {"fruit": "calories",
-            "Apple":  "130",
-            "Avocado":  "50",
-            "Banana":  "110",
-            "Cantaloupe":  "50",
-            "Grapefruit":  "60",
-            "Grapes":  "90",
-            "Honeydew ":  "50",
-            "Melon":  "50",
-            "Kiwifruit":  "90",
-            "Lemon":  "15",
-            "Lime":  "20",
-            "Nectarine":  "60",
-            "Orange":  "80",
-            "Peach":  "60",
-            "Pear":  "100",
-            "Pineapple":  "50",
-            "Plums":  "70",
-            "Strawberries":  "50",
-            "Sweet Cherries":  "100",
-            "Tangerine":  "50",
-            "Watermelon":  "80"}
+            "apple":  "130",
+            "avocado":  "50",
+            "banana":  "110",
+            "cantaloupe":  "50",
+            "grapefruit":  "60",
+            "grapes":  "90",
+            "honeydew ":  "50",
+            "melon":  "50",
+            "kiwifruit":  "90",
+            "lemon":  "15",
+            "lime":  "20",
+            "nectarine":  "60",
+            "orange":  "80",
+            "peach":  "60",
+            "pear":  "100",
+            "pineapple":  "50",
+            "plums":  "70",
+            "strawberries":  "50",
+            "sweet Cherries":  "100",
+            "wtangerine":  "50",
+            "watermelon":  "80"}
 #    print(fruit_dict['Apple'])
 #    print(fruit_dict["Watermelon"])
 
     text = input("Item:")
-    cal = fruit_dict[text]
+    cal = fruit_dict[text.lower()]
     print("calories:",cal)
 
 
