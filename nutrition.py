@@ -17,7 +17,7 @@ def main():
             "cantaloupe":  "50",
             "grapefruit":  "60",
             "grapes":  "90",
-            "honeydew ":  "50",
+            "honeydew":  "50",
             "melon":  "50",
             "kiwifruit":  "90",
             "lemon":  "15",
@@ -29,7 +29,7 @@ def main():
             "pineapple":  "50",
             "plums":  "70",
             "strawberries":  "50",
-            "sweet Cherries":  "100",
+            "sweet cherries":  "100",
             "wtangerine":  "50",
             "watermelon":  "80"}
 #    print(fruit_dict['Apple'])
