@@ -11,6 +11,7 @@ def check_if_valid(text):
         for c in text:
             if  (c.isdigit()):
                 number_found = True
+                if int(2) == 0 : s_valid = "Unvalid"
             else:
                 if (number_found):is_valid = "Unvalid"
     return is_valid
