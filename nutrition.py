@@ -36,7 +36,7 @@ def main():
 #    print(fruit_dict["Watermelon"])
 
     text = input("Item:")
-    if text in fruit_dict:
+    if text.lower() in fruit_dict:
         cal = fruit_dict[text.lower()]
         print("calories:",cal)
 
