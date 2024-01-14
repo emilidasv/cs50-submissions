@@ -32,8 +32,8 @@ def main():
             "Sweet Cherries":  "100",
             "Tangerine":  "50",
             "Watermelon":  "80"}
-    print(fruit_dict['Apple'])
-    print(fruit_dict["Watermelon"])
+#    print(fruit_dict['Apple'])
+#    print(fruit_dict["Watermelon"])
 
     text = input("Item:")
     cal = fruit_dict[text]
