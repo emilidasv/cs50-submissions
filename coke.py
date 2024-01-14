@@ -7,7 +7,7 @@ def main():
         #print("Amount due:", calculate_new_due(due, amount))
         if (amount in list) :
             due = calculate_new_due(due, amount)
-            if int(due ==0) :print ("Change owed:", due)
+            if int(due ==0) :print ("Change Owed:", due)
             else: print("Amount Due:", due)
         else:
             print("Amount Due:", due)
