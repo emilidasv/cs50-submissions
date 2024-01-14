@@ -8,6 +8,8 @@ def main():
         if (amount in list) :
             due = calculate_new_due(due, amount)
             print("Amount due:", due)
+        else:
+            print("Amount due:", due)
 
 
 def calculate_new_due(due, amount):
