@@ -5,7 +5,7 @@ while do_continue:
         x= text.split("/")
         if x[0].isdigit() and x[1].isdigit():
             if x[1] != "0":
-                if int(x[1])>int(x[0]):
+                if int(x[1])>=int(x[0]):
                     calc=int(x[0])/int(x[1])
                     do_continue = False
                     calc = int(round(calc*100))
