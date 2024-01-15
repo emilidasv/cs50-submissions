@@ -14,13 +14,13 @@ def main():
     total_amount= 0
     while (True):
         try:
-            item = get_ans("Item:")
+            item = input("Item:")
             if (item.title() in menu_dict):
                 price = menu_dict[item.title()]
                 total_amount= total_amount + price
-                print("$",total_amount)
+                print("${:.2f}" .format (total_amount))
         except EOFError:
-            print("Total:", total_amount)
+            print("Total: {:.2f}".format (total_amount))
             break
 
 
