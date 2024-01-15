@@ -1,9 +1,5 @@
-item=input("Item:")
-
-total_amount= 0
-do_continue = True
-
-menu_dict={
+def main():
+    menu_dict={
     "Baja Taco": 4.25,
     "Burrito": 7.50,
     "Bowl": 8.50,
@@ -13,18 +9,31 @@ menu_dict={
     "Super Quesadilla": 9.50,
     "Taco": 3.00,
     "Tortilla Salad": 8.00
-}
+    }
 
-while (do_continue):
-    try:
-        if (item.title() in menu_dict):
-            price = menu_dict[item.title()]
-            total_amount= total_amount + price
+    total_amount= 0
+    while (True):
+        try:
+            item = get_ans("Item:")
+            if (item.title() in menu_dict):
+                price = menu_dict[item.title()]
+                total_amount= total_amount + price
+                print("Total:", total_amount)
+        except EOFError:
             print("Total:", total_amount)
-            item=input("Item:")
-    except EOFError:
-        do_continue = False
-        print("Total:", total_amount)
+            break
 
-#print("Total:", total_amount)
 
+
+    #print(f"x is {x}")
+
+
+def get_ans(prompt):
+    while True:
+        try:
+            return input(prompt)
+        except ValueError:
+            pass
+
+
+main()
