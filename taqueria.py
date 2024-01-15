@@ -18,7 +18,7 @@ def main():
             if (item.title() in menu_dict):
                 price = menu_dict[item.title()]
                 total_amount= total_amount + price
-                #print(total_amount)
+                print("$",total_amount)
         except EOFError:
             print("Total:", total_amount)
             break
