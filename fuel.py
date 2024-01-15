@@ -14,7 +14,7 @@ if x[0].isdigit() and x[1].isdigit():
                 calc_str = calc_str + "%"
                 print(calc_str)
         except ValueError:
-            break
+            c=1
 
 #else :
 #    print( "not digits")
