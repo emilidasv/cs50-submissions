@@ -27,7 +27,3 @@ while (do_continue):
 
 print("Total:", total_amount)
 
-try:
-    item = input()
-except EOFError:
-    ...
