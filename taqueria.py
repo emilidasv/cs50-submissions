@@ -27,7 +27,7 @@ def main():
 
     #print(f"x is {x}")
 
-
+# didnt use below function
 def get_ans(prompt):
     while True:
         try:
