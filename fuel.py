@@ -6,6 +6,7 @@ while do_continue:
         if x[0].isdigit() and x[1].isdigit():
         #if x[1] != "0":
             calc=int(x[0])/int(x[1])
+            do_continue = False
             calc = int(round(calc*100))
             if calc <= 1 : print("E")
             elif calc >= 99: print("F")
@@ -13,7 +14,7 @@ while do_continue:
                 calc_str = str(calc)
                 calc_str = calc_str + "%"
                 print(calc_str)
-                do_continue = False
+
     except ValueError:
             pass
 
