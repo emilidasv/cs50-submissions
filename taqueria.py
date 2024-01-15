@@ -24,6 +24,7 @@ while (do_continue):
             item=input("Item:")
     except EOFError:
         do_continue = False
+        print("Total:", total_amount)
 
-print("Total:", total_amount)
+#print("Total:", total_amount)
 
