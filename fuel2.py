@@ -1,4 +1,5 @@
-while True:
+do_continue = True
+while do_continue:
     try:
         text = input("Fraction:")
         x= text.split("/")
@@ -12,6 +13,7 @@ while True:
                 calc_str = str(calc)
                 calc_str = calc_str + "%"
                 print(calc_str)
+                do_continue = False
     except ValueError:
             pass
 
