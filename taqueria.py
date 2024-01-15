@@ -22,9 +22,12 @@ while (do_continue):
             total_amount= total_amount + price
             print("Total:", total_amount)
             item=input("Item:")
-        else:
-            do_continue = False
-    except ValueError:
-        pass
+    except EOFError:
+        do_continue = False
 
 print("Total:", total_amount)
+
+try:
+    item = input()
+except EOFError:
+    ...
