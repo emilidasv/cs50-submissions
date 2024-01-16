@@ -52,12 +52,11 @@ def main () :
                 month_number_str = date_str2[0]
                 day_str = date_str2[1]
                 year_str = date_str2[2]
-                # add leading zero on day ans month
-                if (int(day_str) < 10): day_str = "0{}".format(day_str)
-                if (int(month_number_str) < 10): month_number_str = "0{}".format(month_number_str)
-
 
                 if month_number_str.isdigit():
+                    # add leading zero on day ans month
+                    if (int(day_str) < 10): day_str = "0{}".format(day_str)
+                    if (int(month_number_str) < 10): month_number_str = "0{}".format(month_number_str)
                     if ((int(month_number_str) <= 12 ) and (int(day_str) <= 31)):
                         # add dashes
                         year_str="{}-".format(year_str)
