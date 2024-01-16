@@ -27,28 +27,24 @@ def main () :
                 month_str= date_str[0]
                 if month_str in month_dict:
                     month_number=month_dict[month_str]
-                if int(date_str[1]) <= 31 :
-                    month_str = "{}-".format(str(month_number))
-                    year_str="{}-".format(date_str[2])
-                    new_str = year_str+month_str+date_str[1]
-                    print(new_str)
-
-
-
-
-
+                    if int(date_str[1]) <= 31 :
+                        month_str = "{}-".format(str(month_number))
+                        year_str="{}-".format(date_str[2])
+                        new_str = year_str+month_str+date_str[1]
+                        print(new_str)
             elif counter_of_slash == 2 :
                 date_str2 = date_from_user.split("/")
                 #print("slash")
                 #print(date_str2)
                 #print(date_str2[0])
-                if ((int(date_str2[0]) <= 12 )
-                    and (int(date_str2[1]) <= 31)):
-                    #print(date_str2[2].rstrip(), "-".strip(),date_str2[0].rstrip(),"-",date_str2[1].rstrip())
-                    year_str="{}-".format(date_str2[2])
-                    month_str="{}-".format(date_str2[0])
-                    new_str = year_str+month_str+date_str2[1]
-                    print(new_str)
+                if date_str2[0].isdigit():
+                    if ((int(date_str2[0]) <= 12 )
+                        and (int(date_str2[1]) <= 31)):
+                        #print(date_str2[2].rstrip(), "-".strip(),date_str2[0].rstrip(),"-",date_str2[1].rstrip())
+                        year_str="{}-".format(date_str2[2])
+                        month_str="{}-".format(date_str2[0])
+                        new_str = year_str+month_str+date_str2[1]
+                        print(new_str)
         except EOFError:
             break
 
