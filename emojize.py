@@ -1,6 +1,6 @@
 import emoji
 text = input("")
-print(text)
+#print(text)
 #print(emoji.emojize('hej: :thumbs_up:'))
 if(text == ":thumbs_up:") :print(emoji.emojize(':thumbs_up:'))
 elif (text == ":thumbsup:") :print(emoji.emojize('Output: :thumbsup:'))
