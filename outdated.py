@@ -24,26 +24,45 @@ def main () :
                 date_str = date_str_remove.split()
                 #print("coma")
                 #print(date_str)
-                month_str= date_str[0]
-                if month_str in month_dict:
-                    month_number=month_dict[month_str]
-                    if int(date_str[1]) <= 31 :
-                        month_str = "{}-".format(str(month_number))
-                        year_str="{}-".format(date_str[2])
-                        new_str = year_str+month_str+date_str[1]
+                # assign the day, month and year strings
+                month_number_str = date_str[0]
+                day_str = date_str[1]
+                year_str = date_str[2]
+
+                if month_number_str in month_dict:
+                    month_number=month_dict[month_number_str]
+                    month_number_str = str(month_number)
+                    # add leading zero on day ans month
+                    if (int(day_str) < 10): day_str = "0{}".format(day_str)
+                    if (int(month_number_str) < 10): month_number_str = "0{}".format(month_number_str)
+
+                    if int(day_str) <= 31 :
+                        month_number_str = "{}-".format(month_number_str)
+                        year_str="{}-".format(year_str)
+                        new_str = year_str+month_number_str+day_str
                         print(new_str)
             elif counter_of_slash == 2 :
                 date_str2 = date_from_user.split("/")
                 #print("slash")
                 #print(date_str2)
                 #print(date_str2[0])
-                if date_str2[0].isdigit():
-                    if ((int(date_str2[0]) <= 12 )
-                        and (int(date_str2[1]) <= 31)):
-                        #print(date_str2[2].rstrip(), "-".strip(),date_str2[0].rstrip(),"-",date_str2[1].rstrip())
-                        year_str="{}-".format(date_str2[2])
-                        month_str="{}-".format(date_str2[0])
-                        new_str = year_str+month_str+date_str2[1]
+
+                # assign the day, month and year strings
+                month_number_str = date_str2[0]
+                day_str = date_str2[1]
+                year_str = date_str2[2]
+                # add leading zero on day ans month
+                if (int(day_str) < 10): day_str = "0{}".format(day_str)
+                if (int(month_number_str) < 10): month_number_str = "0{}".format(month_number_str)
+
+
+                if month_number_str.isdigit():
+                    if ((int(month_number_str) <= 12 ) and (int(day_str) <= 31)):
+                        # add dashes
+                        year_str="{}-".format(year_str)
+                        month_number_str="{}-".format(month_number_str)
+
+                        new_str = year_str+month_number_str+day_str
                         print(new_str)
         except EOFError:
             break
