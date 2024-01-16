@@ -28,7 +28,7 @@ def main():
             sorted_dict = {i: grocery_dict[i] for i in myKeys}
             #print(sorted_dict)
             for item in sorted_dict:
-                print(sorted_dict[item], item)
+                print(sorted_dict[item], item.upper())
             break
 
 
