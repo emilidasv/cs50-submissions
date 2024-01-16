@@ -1,8 +1,8 @@
 import emoji
-text = input("Input:")
+text = input("")
 print(text)
 #print(emoji.emojize('hej: :thumbs_up:'))
-if(text == ":thumbs_up:") :print(emoji.emojize('Output: :thumbs_up:'))
+if(text == ":thumbs_up:") :print(emoji.emojize(':thumbs_up:'))
 elif (text == ":thumbsup:") :print(emoji.emojize('Output: :thumbsup:'))
 elif (text == ":1st_place_medal:") :print(emoji.emojize('Output: :1st_place_medal:'))
 elif (text == ":money_bag:") :print(emoji.emojize('Output: :money_bag:'))
