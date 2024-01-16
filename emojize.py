@@ -1,0 +1,12 @@
+import emoji
+text = input("Input:")
+print(text)
+#print(emoji.emojize('hej: :thumbs_up:'))
+if(text == ":thumbs_up:") :print(emoji.emojize('Output: :thumbs_up:'))
+elif (text == ":1st_place_medal:") :print(emoji.emojize('Output: :1st_place_medal:'))
+elif (text == ":money_bag:") :print(emoji.emojize('Output: :money_bag:'))
+elif (text == ":smile_cat:") :print(emoji.emojize('Output: :smile_cat:'))
+elif (text == ":earth_africa:") :print(emoji.emojize('Output: :earth_africa:'))
+elif (text == ":earth_america:") :print(emoji.emojize('Output: :earth_america:'))
+elif (text == ":earth_asia:") :print(emoji.emojize('Output: :earth_asia:'))
+else: print("unknown")
