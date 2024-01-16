@@ -44,7 +44,9 @@ def main () :
                         print(new_str)
                         break
             elif counter_of_slash == 2 :
+                date_str2 = date_str2.strip()
                 date_str2 = date_from_user.split("/")
+                date_str2 = date_str2.strip()
                 #print("slash")
                 #print(date_str2)
                 #print(date_str2[0])
