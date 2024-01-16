@@ -22,8 +22,8 @@ def main () :
             if counter_of_comas == 1:
                 date_str_remove= date_from_user.replace(",", "")
                 date_str = date_str_remove.split()
-                print("coma")
-                print(date_str)
+                #print("coma")
+                #print(date_str)
                 month_str= date_str[0]
                 if month_str in month_dict:
                     month_number=month_dict[month_str]
