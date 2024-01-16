@@ -20,8 +20,10 @@ def main () :
             counter_of_comas = date_from_user.count(",")
             counter_of_slash = date_from_user.count("/")
             if counter_of_comas == 1:
+                date_str = date_str.strip()
                 date_str_remove= date_from_user.replace(",", "")
                 date_str = date_str_remove.split()
+
                 #print("coma")
                 #print(date_str)
                 # assign the day, month and year strings
