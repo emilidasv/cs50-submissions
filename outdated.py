@@ -41,6 +41,7 @@ def main () :
                         year_str="{}-".format(year_str)
                         new_str = year_str+month_number_str+day_str
                         print(new_str)
+                        break
             elif counter_of_slash == 2 :
                 date_str2 = date_from_user.split("/")
                 #print("slash")
@@ -64,6 +65,7 @@ def main () :
 
                         new_str = year_str+month_number_str+day_str
                         print(new_str)
+                        break
         except EOFError:
             break
 
