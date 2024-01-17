@@ -20,7 +20,7 @@ else:
                 # try with alias as well
                 tmpput = emoji.emojize(text[i].strip(),language='alias')
                 if (emoji.is_emoji(tmpput)):
-                    output = output + tmpput
+                    output = output + ", " + tmpput
                 else:
                     output = output + text[i]
             i = i + 1
