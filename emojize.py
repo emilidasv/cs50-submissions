@@ -8,14 +8,14 @@ def main():
 
         text = text.split(",")
 
-        print(text[0] + "," + emo(text[1]))
+        print(text[0] + "," + create_emo(text[1]))
 
     else:
 
-        print(emo(text))
+        print(create_emo(text))
 
 
-def emo(name):
+def create_emo(name):
 
     try:
 
