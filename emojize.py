@@ -8,18 +8,18 @@ def main():
 
         text = text.split(",")
 
-        print(text[0] + "," + emo(text[1]))
+        print(text[0] + "," + create_emo(text[1]))
 
     else:
 
         print(emo(text))
 
 
-def emo(name):
+def create_emo(name):
 
     try:
 
-        o=emoji.emojize(name)
+        output=emoji.emojize(name)
 
     except:
 
@@ -27,8 +27,8 @@ def emo(name):
 
     else:
 
-        o=emoji.emojize(name,language='alias')
+        output=emoji.emojize(name,language='alias')
 
-    return o
+    return output
 
 main()
