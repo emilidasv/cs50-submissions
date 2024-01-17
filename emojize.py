@@ -1,31 +1,34 @@
 import emoji
-text = input("Input:")
 
-output = emoji.emojize(text)
-print ("Output:", output)
-#print(text)
-#print(emoji.emojize('hej: :thumbs_up:'))
+def main():
+
+    text =input("Input: ")
+
+    if "," in text:
+
+        text = text.split(",")
+
+        print(text[0] + "," + emo(text[1]))
+
+    else:
+
+        print(emo(text))
 
 
+def emo(name):
 
-#try:
-#    print('hej')
-#    #print(emoji.emojize(text))
-#except:
-#    pass
-#else:
-#    print('hej')
-#    print(emoji.emojize(text, language ='alias'))
-##
-##if "," in text:
-##   text = text.split(",")
-##    try:
-##        emo= emoji.emojize(text[1])
-##    except:
-##        pass
-##   else:
-##        emo= emoji.emojize(text[1], language='alias')
+    try:
 
-#print(text[0]+","+ emo)
-#print(emoji.emojize(':cat:'))
+        o=emoji.emojize(name)
 
+    except:
+
+        pass
+
+    else:
+
+        o=emoji.emojize(name,language='alias')
+
+    return o
+
+main()
