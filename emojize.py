@@ -19,7 +19,7 @@ def emo(name):
 
     try:
 
-        o=emoji.emojize(name)
+        tmp=emoji.emojize(name)
 
     except:
 
@@ -27,8 +27,8 @@ def emo(name):
 
     else:
 
-        o=emoji.emojize(name,language='alias')
+        tmp=emoji.emojize(name,language='alias')
 
-    return o
+    return tmp
 
 main()
