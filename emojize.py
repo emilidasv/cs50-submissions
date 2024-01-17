@@ -21,6 +21,7 @@ def create_emo(name):
 
         tmp=emoji.emojize(name)
 
+
     except:
 
         pass
