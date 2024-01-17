@@ -1,35 +1,31 @@
 import emoji
+text = input("Input:")
 
-def main():
-
-    text =input("Input: ")
-
-    if "," in text:
-
+output = emoji.emojize(text)
+if (emoji.is_emoji(output)):
+    print ("Output:", output)
+else:
+    #print(text)
+    if text.count(",") > 0:
         text = text.split(",")
-
-        print(text[0] + "," + create_emo(text[1]))
-
+        i=0
+        output =""
+        while (i < len(text)) :
+            #print("text", text[i])
+            tmp_output = emoji.emojize(text[i].strip())
+            #print("tmp", tmp_output)
+            if(emoji.is_emoji(tmp_output)):
+                output = output + ", " +tmp_output
+            else :
+                output = output + text[i]
+            i = i + 1
+        print(output)
     else:
-
-        print(create_emo(text))
-
-
-def create_emo(name):
-
-    try:
-
-        tmp=emoji.emojize(name)
+        output = emoji.emojize(text,language='alias')
+        print(output)
 
 
-    except:
 
-        pass
 
-    else:
 
-        tmp=emoji.emojize(name,language='alias')
 
-    return tmp
-
-main()
