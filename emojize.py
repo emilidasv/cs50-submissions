@@ -31,6 +31,8 @@ else:
 
 
 # hello, :earth_asia: is not working since this is an alias emojis and a coma in the sentence.
+        # This program als assumes that the text comes first and all efter coma is emojies.
+        # should probabley redo the order of the code since I am using two things twice. 
 
 
 
