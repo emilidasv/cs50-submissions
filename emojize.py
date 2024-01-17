@@ -17,7 +17,12 @@ else:
             if(emoji.is_emoji(tmp_output)):
                 output = output + ", " +tmp_output
             else :
-                output = output + text[i]
+                # try with alias as well
+                tmpput = emoji.emojize(text[i].strip(),language='alias')
+                if (emoji.is_emoji(tmpput)):
+                    output = output + tmpput
+                else:
+                    output = output + text[i]
             i = i + 1
         print(output)
     else:
@@ -25,7 +30,7 @@ else:
         print(output)
 
 
-
+# hello, :earth_asia: is not working since this is an alias emojis and a coma in the sentence.
 
 
 
