@@ -8,7 +8,7 @@ def main():
     if (size > 0):
 
         score = 0
-        for i in range(1, 10):
+        for i in range(0, 10):
             number_of_try = get_question(size)
             if number_of_try == 0:
                 score = score+1
@@ -19,7 +19,7 @@ def main():
 def get_question(size):
     x = generate_integer(size)
     y = generate_integer(size)
-    question_str= str(x) + "+" + str(y) + "="
+    question_str= str(x) + " + " + str(y) + " = "
     number_of_try = 0
     while True:
         if(number_of_try < 3):
