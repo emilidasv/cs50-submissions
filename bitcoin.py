@@ -8,7 +8,7 @@ def main():
         try:
             amount_of_bc = float(sys.argv[1])
         except:
-            sys.exit("Wrong number of arguemnts)
+            sys.exit("Wrong number of arguemnts")
 
 
     try:
