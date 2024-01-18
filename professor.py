@@ -7,6 +7,7 @@ def main():
     size = get_level()
     while(size < 0):
         size = get_level()
+        break
     score = 0
     for i in range(1, 10):
         number_of_try = get_question(size)
