@@ -37,7 +37,7 @@ def get_question(size):
                 else:
                     return number_of_try
             except ValueError:
-                sys.exit()
+                #sys.exit()
                 return -1
         else:
             print(question_str, correct_answer)
