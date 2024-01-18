@@ -33,7 +33,7 @@ def main():
         rate = (chosen_val["rate_float"])
         #print(rate)
 
-        amount = int(amount_of_bc) * float(rate)
+        amount = float(amount_of_bc) * float(rate)
         print(f"${amount:,.4f}")
 
     except requests.RequestException:
