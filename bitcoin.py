@@ -30,14 +30,15 @@ def main():
         bpi_dict = o["bpi"]
         #print(bpi_dict)
         chosen_val = list(bpi_dict.values())[0]
-        rate = (chosen_val["rate"])
+        rate = (chosen_val["rate_float"])
         print(rate)
-        #rate = list(rate)
-        rate = rate.replace(".", "")
-        rate = rate.replace(",","")
-        print(rate)
+        #rate = rate.replace(".", "")
+        #rate = rate.replace(",","")
+        #print(rate)
+        #rate= int(rate)
+        #rate= rate/100
         amount = int(amount_of_bc) * float(rate)
-        print(f"${amount:,.4f}")
+        print(f"${amount:,.2f}")
 
     except requests.RequestException:
         ...
