@@ -5,7 +5,7 @@ def main():
 
 
     size = get_level()
-    if (size < 0):raise ValueError
+    if (size < 0):raise ValueError("invalid")
     else:
         score = 0
         for i in range(0, 10):
