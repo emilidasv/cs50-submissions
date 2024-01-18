@@ -1,14 +1,16 @@
 import random
+import sys
 
 
 def main():
 
 
     size = get_level()
-    print(size)
+    #debug print(size)
+    #debug print("A")
     if (size < 0):
-        print("Invalid")
-        #sys.exit()
+        #debug print("Invalid")
+        sys.exit("error")
     else:
         score = 0
         for i in range(0, 10):
@@ -46,13 +48,20 @@ def get_question(size):
 def get_level():
     while True:
         size_of_number= input("")
+        #debug print("B")
         try:
+            #debug print("D")
             size = int(size_of_number)
+            #debug print("E")
             if size > 0 and size < 4:
                 return size
+            else:
+                return -1
         except ValueError:
-            print("ValueError")
-            return -1
+            #print("ValueError")
+            #return -1
+            #debug print("c")
+            sys.exit("Wrong argeument")
 
 def generate_integer(level):
     if level == 3: x = random.randint(100, 999)
