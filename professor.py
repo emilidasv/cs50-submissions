@@ -40,7 +40,7 @@ def get_question(size):
 
 def get_level():
     while True:
-        size_of_number= input("Level:")
+        size_of_number= input("")
         try:
             size = int(size_of_number)
             if size > 0 and size < 4:
