@@ -8,6 +8,7 @@ def main():
     print(size)
     if (size < 0):
         print("Invalid")
+        sys.exit()
     else:
         score = 0
         for i in range(0, 10):
