@@ -52,16 +52,17 @@ def get_level():
         try:
             #debug print("D")
             size = int(size_of_number)
-            #debug print("E")
-            if size > 0 and size < 4:
-                return size
-            else:
-                return -1
+            # debug print("E")
         except ValueError:
             #print("ValueError")
             #return -1
             #debug print("c")
             sys.exit("Wrong argeument")
+        else:
+            if size > 0 and size < 4:
+                return size
+            else:
+                pass
 
 def generate_integer(level):
     if level == 3: x = random.randint(100, 999)
