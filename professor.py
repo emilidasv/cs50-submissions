@@ -10,7 +10,7 @@ def main():
         score = 0
         for i in range(0, 10):
             number_of_try = get_question(size)
-            if number_of_try == 0:
+            if number_of_try < 3:
                 score = score+1
         print("Score", score, "/10")
 
