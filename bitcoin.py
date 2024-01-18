@@ -16,9 +16,9 @@ def main():
         #r.status_code
         #print(r.status_code)
         #print(r.text)
-        print("")
-        print("")
-        print(json.dumps(r.json(), indent=2))
+        #print("")
+        #print("")
+        #print(json.dumps(r.json(), indent=2))
         o = r.json()
 
         for bpi in o["bpi"]:
@@ -31,12 +31,8 @@ def main():
         #print(bpi_dict)
         chosen_val = list(bpi_dict.values())[0]
         rate = (chosen_val["rate_float"])
-        print(rate)
-        #rate = rate.replace(".", "")
-        #rate = rate.replace(",","")
         #print(rate)
-        #rate= int(rate)
-        #rate= rate/100
+
         amount = int(amount_of_bc) * float(rate)
         print(f"${amount:,.2f}")
 
