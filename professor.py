@@ -8,7 +8,7 @@ def main():
     print(size)
     if (size < 0):
         print("Invalid")
-        sys.exit()
+        #sys.exit()
     else:
         score = 0
         for i in range(0, 10):
@@ -37,6 +37,7 @@ def get_question(size):
                 else:
                     return number_of_try
             except ValueError:
+                sys.exit()
                 return -1
         else:
             print(question_str, correct_answer)
