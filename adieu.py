@@ -21,7 +21,7 @@ def main():
     #print(len(output2))
 
     if (len(sys.argv) == 1 ):
-        output_string = "Adieu, Audie, to " + p.join((output2))
+        output_string = "Adieu, audie, to " + p.join((output2))
     else:
         sys.exit("Wrong number of arguments")
 
