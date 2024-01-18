@@ -12,7 +12,8 @@ def main():
             number_of_try = get_question(size)
             if number_of_try < 3:
                 score = score+1
-        print("Score", score, "/10")
+        #print("Score", score, "/10")
+        print(score)
 
 
 
