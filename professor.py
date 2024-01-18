@@ -5,14 +5,14 @@ def main():
 
 
     size = get_level()
-    #if (size < 0):raise ValueError("invalid")
-    #else:
-    score = 0
-    for i in range(0, 10):
-        number_of_try = get_question(size)
-        if number_of_try < 3:
-            score = score+1
-        #print("Score", score, "/10")
+    if (size < 0):raise ValueError("Invalid")
+    else:
+        score = 0
+        for i in range(0, 10):
+            number_of_try = get_question(size)
+            if number_of_try < 3:
+                score = score+1
+            #print("Score", score, "/10")
         print(score)
 
 
@@ -34,7 +34,7 @@ def get_question(size):
                 else:
                     return number_of_try
             except ValueError:
-                raise ValueError
+                return -1
         else:
             print(question_str, correct_answer)
             return number_of_try
