@@ -4,29 +4,30 @@ import inflect
 
 
 def main():
-    p = inflect.engine()
-    output=""
-    while (True):
-        try:
-            item = input("")
-            output= output + item +","
-        except EOFError:
-            break
-
-    #strip the last coma
-    output = output[0:len(output)-1]
-    output2 = output.split(",")
-    #print(mylist)
-    #print(output2)
-    #print(len(output2))
-
-    if (len(sys.argv) == 1 ):
-        output_string = "Adieu, adieu, to " + p.join((output2))
-    else:
+    if (len(sys.argv) != 1 ):
         sys.exit("Wrong number of arguments")
+    else:
 
-    #print("")
-    print(output_string )
+
+        p = inflect.engine()
+        output=""
+        while (True):
+            try:
+                item = input("")
+                output= output + item +","
+            except EOFError:
+                break
+
+        #strip the last coma
+        output = output[0:len(output)-1]
+        output2 = output.split(",")
+        #print(mylist)
+        #print(output2)
+        #print(len(output2))
+        output_string = "Adieu, adieu, to " + p.join((output2))
+
+
+        print(output_string )
 
 if __name__ == "__main__":
     main()
