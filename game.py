@@ -16,7 +16,7 @@ def main():
                 print ("Just right!")
                 break
             elif int(guess) < number_to_guess:print("Too small!")
-            else : print ("Too big!")
+            else : print ("Too large!")
 
         except ValueError:
             print("ValueError")
