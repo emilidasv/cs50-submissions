@@ -8,7 +8,7 @@ def main():
         try:
             amount_of_bc = float(sys.argv[1])
         except:
-            sys.exit()
+            sys.exit(1)
 
 
     try:
@@ -37,7 +37,7 @@ def main():
         print(f"${amount:,.4f}")
 
     except requests.RequestException:
-        ...
+        sys.exit(1)
 
 
 if __name__ == "__main__":
