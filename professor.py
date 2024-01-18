@@ -5,8 +5,8 @@ def main():
 
 
     size = get_level()
-    if (size > 0):
-
+    if (size < 0):raise ValueError
+    else:
         score = 0
         for i in range(0, 10):
             number_of_try = get_question(size)
