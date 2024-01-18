@@ -8,7 +8,7 @@ def main():
     output=""
     while (True):
         try:
-            item = input("Name:")
+            item = input("")
             output= output + item +","
         except EOFError:
             break
