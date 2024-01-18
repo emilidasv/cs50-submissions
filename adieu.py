@@ -25,6 +25,7 @@ def main():
     else:
         sys.exit("Wrong number of arguments")
 
+    print("")
     print(output_string )
 
 if __name__ == "__main__":
