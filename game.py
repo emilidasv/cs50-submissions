@@ -2,7 +2,12 @@ import random
 
 def main():
     n= input("Level:")
-    number_to_guess = random.randint(1,int(n))
+    try:
+        number_to_guess = random.randint(1,int(n))
+    except ValueError:
+        print("ValueError")
+
+
     while True :
         guess = input("Guess:")
         print(number_to_guess)
