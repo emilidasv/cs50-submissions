@@ -3,12 +3,12 @@ import requests
 import sys
 def main():
     if len(sys.argv) != 2:
-        sys.exit()
+        sys.exit("Wrong number of arguemnts")
     else:
         try:
             amount_of_bc = float(sys.argv[1])
         except:
-            sys.exit("Wrong number of arguemnts")
+            sys.exit("Wrong type of arguemnts")
 
 
     try:
