@@ -21,10 +21,10 @@ def main():
         #print(json.dumps(r.json(), indent=2))
         o = r.json()
 
-        for bpi in o["bpi"]:
-            print(bpi)
-            if (bpi =="USD"):
-                print("rate")
+        #for bpi in o["bpi"]:
+            #print(bpi)
+            #if (bpi =="USD"):
+                #print("rate")
         #chosen_key = list(figlet_font_dict)[0]
         #chosen_val = list(figlet_font_dict.values())[0]
         bpi_dict = o["bpi"]
@@ -34,7 +34,7 @@ def main():
         #print(rate)
 
         amount = int(amount_of_bc) * float(rate)
-        print(f"${amount:,.2f}")
+        print(f"${amount:,.4f}")
 
     except requests.RequestException:
         ...
