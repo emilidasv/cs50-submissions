@@ -10,13 +10,19 @@ def main():
 
     while True :
         guess = input("Guess:")
-        #print(number_to_guess)
-        ##try:
-        if int(guess) == number_to_guess:
-            print ("Just right!")
-            break
-        elif int(guess) < number_to_guess:print("Too small!")
-        else : print ("Too big!")
+        try:
+            x=int(guess)
+            if int(guess) == number_to_guess:
+                print ("Just right!")
+                break
+            elif int(guess) < number_to_guess:print("Too small!")
+            else : print ("Too big!")
+
+        except ValueError:
+            print("ValueError")
+
+
+
         ##except ValueError:
         ##print("ValueError")
 
