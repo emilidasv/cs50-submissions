@@ -57,7 +57,8 @@ def get_level():
             #print("ValueError")
             #return -1
             #debug print("c")
-            sys.exit("Wrong argument")
+            #sys.exit("Wrong argument")
+            return 
         else:
             if size > 0 and size < 4:
                 return size
