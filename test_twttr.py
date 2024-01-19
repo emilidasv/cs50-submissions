@@ -1,5 +1,7 @@
 from twttr import shorten
 
+def main():
+
 def test_shorten():
     assert shorten("twitter") == "twttr"
 
@@ -15,3 +17,8 @@ def test_shorten_other_char():
 def test_shorten_capitalized():
     assert shorten("kakOsd-jOklU4jYEkl") == "kksd-jkl4jkl"
 
+def test_shorten_nostring():
+    assert shorten("") == ""
+
+if __name__ == "__main__":
+    main()
