@@ -5,11 +5,11 @@ def test_convert_ok_input():
     assert convert("1/3") == 33
 
 def test_convert_char():
-    with pytest.raises(TypeError):
+    with pytest.raises(ValueError):
         convert("cat/dog")
 
 def test_convert_div_zero():
-    with pytest.raises(ValueError):
+    with pytest.raises(ZeroDivisionError):
         convert("1/0")
 
 def test_convert_low():
