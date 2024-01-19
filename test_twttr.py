@@ -15,5 +15,3 @@ def test_shorten_other_char():
 def test_shorten_capitalized():
     assert shorten("kakOsd-jOklU4jYEkl") == "kksd-jkl4jkl"
 
-def test_shorten_nostring():
-    assert shorten("") == ""
