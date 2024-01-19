@@ -18,3 +18,6 @@ def test_shorten_capitalized():
 def test_shorten_nostring():
     assert shorten("") == ""
 
+def test_shorten_punctuation():
+    assert shorten(".!?&") == ".!?&"
+
