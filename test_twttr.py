@@ -1,0 +1,23 @@
+from twttr import shorten
+
+def test_shorten():
+    assert shorten("twitter") == "twttr"
+
+def test_shorten_wo_aouiy():
+    assert shorten("twttr") == "twttr"
+
+def test_shorten_only_aouiy():
+    assert shorten("aouiy") == "y"
+
+def test_shorten_other_char():
+    assert shorten("kakosd-joklu4jyekl") == "kksd-jkl4jykl"
+
+def test_shorten_capitalized():
+    assert shorten("kakOsd-jOklU4jYEkl") == "kksd-jkl4jYkl"
+
+def test_shorten_nostring():
+    assert shorten("") == ""
+
+def test_shorten_punctuation():
+    assert shorten(".!?&") == ".!?&"
+
