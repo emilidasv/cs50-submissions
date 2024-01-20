@@ -18,6 +18,9 @@ def main():
             print(number_of_rows)
 
 
+    print(exit())
+
+
 
 def read_arg(user_arg):
 
