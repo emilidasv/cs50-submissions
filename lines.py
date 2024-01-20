@@ -23,7 +23,7 @@ def read_arg(user_arg):
 
     if len(user_arg) < 2:
         print("Too few command-line arguments")
-        return False
+        sys.exit()
     elif len(user_arg) > 2:
         print("Too many command-line arguments")
         return False
