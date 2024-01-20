@@ -9,11 +9,11 @@ def main():
     if(read_arg(user_arg)):
         file_name=user_arg[1]
         # if all OK open the file and check that file actually is an py fle
-        print(file_name)
+        #print(file_name)
         if (read_file(file_name)) == FileNotFoundError:
             print("ja")
         else:
-            print("nej")
+            #print("nej")
             number_of_rows=calculate_numbers_of_rows(file_name)
             print(number_of_rows)
 
