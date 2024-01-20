@@ -17,11 +17,12 @@ def main():
             number_of_rows=calculate_numbers_of_rows(file_name)
             print(number_of_rows)
 
+
 def read_arg(user_arg):
 
     if len(user_arg) < 2:
         print("Too few command-line arguments")
-        sys.exit(1)
+        return False
     elif len(user_arg) > 2:
         print("Too many command-line arguments")
         return False
