@@ -16,11 +16,7 @@ def main():
             print("nej")
             number_of_rows=calculate_numbers_of_rows(file_name)
             print(number_of_rows)
-
-
-    print(exit())
-
-
+exit(1)
 
 def read_arg(user_arg):
 
