@@ -16,13 +16,12 @@ def main():
             print("nej")
             number_of_rows=calculate_numbers_of_rows(file_name)
             print(number_of_rows)
-exit(1)
 
 def read_arg(user_arg):
 
     if len(user_arg) < 2:
         print("Too few command-line arguments")
-        sys.exit()
+        sys.exit(1)
     elif len(user_arg) > 2:
         print("Too many command-line arguments")
         return False
