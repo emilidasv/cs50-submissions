@@ -47,16 +47,16 @@ def read_file(filename):
         sys.exit(FileNotFoundError)
 
 def check_line(line):
-    print("line", line)
+    #print("line", line)
     if line.isspace():
-        print("False ispace")
+        #print("False ispace")
         return False
     if line.strip().startswith("#"):
-        print("False #")
+        #print("False #")
         return False
 
     else:
-        print("True")
+        #print("True")
         return True
 
 
