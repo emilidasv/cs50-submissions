@@ -11,20 +11,23 @@ def main():
 
 def read_file(filename):
 
+
+    #dict_from_csv = dict(list(csv_reader)[0])
+
+    # making a list from the keys of the dict
+    #list_of_column_names = list(dict_from_csv.keys())
+
     with open(filename, newline='') as csvfile:
         reader = csv.DictReader(csvfile)
+        header_row = reader.fieldnames
         table = []
-        tworows=["Regular Pizza", "Large", "Small"]
-        table.append(tworows)
+        #print(table)
         for row in reader:
             #print(row["Regular Pizza"], row["Large"], row["Small"])
             tworows= [row["Regular Pizza"], row["Large"], row["Small"]]
             table.append(tworows)
-    #print(table)
-    #table1 = [["Sun",696000,1989100000],["Earth",6371,5973.6],
-    #       ["Moon",1737,73.5],["Mars",3390,641.85]]
-    #print(tabulate(table, headers = ["Regular Pizza", "Large", "Small"], tablefmt="grid"))
-    print(tabulate(table, headers = "firstrow", tablefmt="grid"))
+
+    print(tabulate(table, headers = header_row, tablefmt="grid"))
 
 
 
