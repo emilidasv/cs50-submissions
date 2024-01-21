@@ -20,6 +20,7 @@ def read_input_file(input, output):
         number_of_lines=0
         with open(output, "a") as file:
             writer = csv.DictWriter(file, fieldnames=["Last Name", "First Name", "home"])
+            writer.writerow({"Last Name": "Last Name", "First Name":"First Name", "home": "home"})
             for row in reader:
                 #print(row["Regular Pizza"], row["Large"], row["Small"])
                 onerow= [row[header_row[0]], row[header_row[1]]]
