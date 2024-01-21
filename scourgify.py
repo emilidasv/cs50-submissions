@@ -18,7 +18,7 @@ def read_input_file(input, output):
         table.append(header_row)
         #print(table)
         number_of_lines=0
-        with open(output, "a") as file:
+        with open(output, "w") as file:
             writer = csv.DictWriter(file, fieldnames=["first", "last", "house"])
             writer.writerow({"first": "first", "last":"last", "house": "house"})
             for row in reader:
