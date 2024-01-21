@@ -18,6 +18,7 @@ def main():
             print(number_of_rows)
 
 
+
 def read_arg(user_arg):
 
     if len(user_arg) < 2:
@@ -56,9 +57,11 @@ def calculate_numbers_of_rows(filename):
      i=0
      with open(filename, "r") as file:
         for line in file:
+            i=i+1
             line.strip()
-            if (line[0] != "#" and line[0] !="\n"):
+            if line[0] != "#" and line[0]!="\n" :
                 number_of_rows = number_of_rows + 1
+                print(i)
         #print("number_of_rows", number_of_rows)
         return number_of_rows
 
