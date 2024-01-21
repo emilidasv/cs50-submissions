@@ -24,7 +24,7 @@ def read_file(filename):
         #print(table)
         for row in reader:
             #print(row["Regular Pizza"], row["Large"], row["Small"])
-            tworows= [row["Regular Pizza"], row["Large"], row["Small"]]
+            tworows= [row[header_row[0]], row[header_row[1]], row[header_row[2]]]
             table.append(tworows)
 
     print(tabulate(table, headers = header_row, tablefmt="grid"))
