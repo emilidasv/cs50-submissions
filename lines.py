@@ -56,13 +56,20 @@ def calculate_numbers_of_rows(filename):
      with open(filename, "r") as file:
         for line in file:
             i=i+1
-            line=line.strip('')
-            if line[0] != "#" and line[0]!="\n" :
+            #print(line)
+            #line=line.strip('')
+            #print(line)
+            #if line[0] != "#" and line[0]!="\n" :
+            if(check_line(line)):
                 number_of_rows = number_of_rows + 1
                 #print(i)
         #print("number_of_rows", number_of_rows)
         return number_of_rows
 
+def check_line(line):
+    if line.isspace():return False
+    if line.strip('').startswith("#"):False
+    else: return True
 
 if __name__ == "__main__":
     main()
