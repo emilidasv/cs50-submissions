@@ -17,6 +17,7 @@ def main():
         if check_line(line) == False:
             count_lines += 1
     print(count_lines)
+    file.close()
 
 
 
