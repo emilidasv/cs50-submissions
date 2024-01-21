@@ -56,8 +56,8 @@ def calculate_numbers_of_rows(filename):
      with open(filename, "r") as file:
         for line in file:
             i=i+1
-            line=line.strip()
-            if line.startswith("#") and line[0]!="\n" :
+            line=line.strip('')
+            if line[0] != "#" and line[0]!="\n" :
                 number_of_rows = number_of_rows + 1
                 #print(i)
         #print("number_of_rows", number_of_rows)
