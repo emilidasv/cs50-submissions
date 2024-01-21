@@ -19,17 +19,17 @@ def read_input_file(input, output):
         #print(table)
         number_of_lines=0
         with open(output, "a") as file:
-            writer = csv.DictWriter(file, fieldnames=["first", "last", "home"])
-            writer.writerow({"first": "first", "last":"last", "home": "home"})
+            writer = csv.DictWriter(file, fieldnames=["first", "last", "house"])
+            writer.writerow({"first": "first", "last":"last", "house": "house"})
             for row in reader:
                 #print(row["Regular Pizza"], row["Large"], row["Small"])
                 onerow= [row[header_row[0]], row[header_row[1]]]
                 lname, fname = onerow[0].split(",")
-                home =onerow[1]
+                house =onerow[1]
                 #print(lname, " ", fname, " ", home)
                 table.append(onerow)
                 number_of_lines = number_of_lines + 1
-                writer.writerow({"first": fname.strip(), "last":lname.strip(), "home": home.strip()})
+                writer.writerow({"first": fname.strip(), "last":lname.strip(), "house": house.strip()})
 
             #print(table)
             #print(table[1])
