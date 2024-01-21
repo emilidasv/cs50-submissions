@@ -10,9 +10,7 @@ def main():
         file_name=user_arg[1]
         # if all OK open the file and check that file actually is an py fle
         #print(file_name)
-        if (read_file(file_name)) == FileNotFoundError:
-            print("ja")
-        else:
+        if (read_file(file_name)):
             #print("nej")
             number_of_rows=calculate_numbers_of_rows(file_name)
             print(number_of_rows)
@@ -22,24 +20,24 @@ def main():
 def read_arg(user_arg):
 
     if len(user_arg) < 2:
-        print("Too few command-line arguments")
-        return False
+        #print("Too few command-line arguments")
+        sys.exit("Too few command-line arguments")
     elif len(user_arg) > 2:
-        print("Too many command-line arguments")
-        return False
+        #print("Too many command-line arguments")
+        sys.exit("Too many command-line arguments")
     else:
         user_input= user_arg[1]
         try:
             input, py = user_input.split('.py')
         except:
-            print("Not a Python file")
-            return False
+            #print("Not a Python file")
+            sys.exit("Not a Python file")
         if input and not(py) :
 
             return True
         else:
-            print("Not a Python file")
-            return False
+            #print("Not a Python file")
+            sys.exit("Not a Python file")
 
 def read_file(filename):
 
@@ -50,7 +48,7 @@ def read_file(filename):
     except:
         #print("File does not exist")
         #raise FileNotFoundError
-        sys.exit()
+        sys.exit(FileNotFoundError)
 
 def calculate_numbers_of_rows(filename):
      number_of_rows = 0
