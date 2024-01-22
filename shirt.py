@@ -1,4 +1,5 @@
 import sys
+import os
 from PIL import Image, ImageOps
 def main():
 
@@ -46,6 +47,15 @@ def check_user_input():
     #print(file_shirt)  shirt.png
     #print(filename1)   before1.png
     #print(filename2)   after1.png
+    #print(ftype1)
+    #print(ftype2)
+    if (ftype1.lower()!= "png"):
+        # open a file in jpg or jpeg and save as temporary png file"
+        pngfile = Image.open(filename1)
+        pngfile.save("tmp_filename1.png")
+        pngfile.close()
+        filename1 = "tmp_filename1.png"
+
     resize_paste_images(filename1, file_shirt, filename2)
 
 def resize_paste_images(file_people, file_shirt, output_file):
@@ -74,6 +84,13 @@ def resize_paste_images(file_people, file_shirt, output_file):
 
     # save the image
     Image1copy.save(output_file)
+    # close and cleanup tempory files
+    Image1.close()
+    Image2.close()
+    Image1copy.close()
+    Image2copy.close()
+    os.remove("tmp_resized_person.png")
+    os.remove("tmp_filename1.png")
 
 
 
