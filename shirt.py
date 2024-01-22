@@ -5,7 +5,7 @@ def main():
 
     check_user_input()
     shirt1 = Image.open("before1.jpg")
-    shirt2 = Image.open("shirt.png")
+    shirt2 = Image.open("cs50_Tshirt.png")
     shirt1.save("before1.png")
 
     size1 = shirt1.size
@@ -43,7 +43,7 @@ def check_user_input():
     except:
          sys.exit("Invalid output")
 
-    file_shirt ="shirt.png"
+    file_shirt ="cs50_Tshirt.png"
     #print(file_shirt)  shirt.png
     #print(filename1)   before1.png
     #print(filename2)   after1.png
