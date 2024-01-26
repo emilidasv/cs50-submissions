@@ -4,13 +4,17 @@ import sys
 
 def main():
     print(parse(input("HTML: ")))
+#<iframe src="http://www.youtube.com/embed/xvFZjo5PgG0"></iframe>
 
 
 def parse(text):
     text = text.strip()
     output=''
+#    if matches := re.match(r'^(?:<iframe)(?:.*)(?:\.youtube\.com\/embed\/)(\w{11})(?:\")(?:.*)', text, re.IGNORECASE):
+#        output= "https://youtu.be/" + matches.group(1)
+
     if matches := re.match(r'^(?:<iframe)(?:.*)(?:embed\/)(\w{11})(?:\")(?:.*)', text, re.IGNORECASE):
-        output= "https://youtu.be/" + matches.group(1)
+       output= "https://youtu.be/" + matches.group(1)
     else:
         print("None")
     return output
