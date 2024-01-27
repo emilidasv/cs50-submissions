@@ -35,8 +35,9 @@ def convert(text):
             begin_hours_int = begin_hours_int + 12
             begin_hours_str = str(begin_hours_int)
 
-        elif begin_hours_int == 12 and str(matches.group(4))=="AM":
+        elif (begin_hours_int == 12 and str(matches.group(4))=="AM"):
             begin_hours_str="00"
+
         #else:
         #     print("else")
         #if begin_min_str =="" :
@@ -47,7 +48,7 @@ def convert(text):
         if end_hours_int<12 and str(matches.group(8))=="PM":
             end_hours_int = end_hours_int + 12
             end_hours_str = str(end_hours_int)
-        elif end_hours_int == 12 and str(matches.group(4))=="AM":
+        elif (end_hours_int == 12 and str(matches.group(8))=="AM"):
             end_hours_str="00"
         #else:
             #print("else")
