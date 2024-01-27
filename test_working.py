@@ -34,4 +34,7 @@ def test_convert_60min_begin():
 def test_convert_60min_end():
     with pytest.raises(ValueError):
         convert("10:00 AM to 11:65 PM")
+def test_convert_no_to():
+    with pytest.raises(ValueError):
+        convert("10:00 AM 11:65 PM")
 
