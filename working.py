@@ -60,7 +60,7 @@ def convert(text):
         end_output = end_hours_str + ":" + end_min_str
 
         output= begin_output + " to " + end_output
-
+        return output
     else:
         output = "None"
         #print(type(output))
@@ -68,7 +68,8 @@ def convert(text):
         #print("None")
     #print(matches)
 
-    return output
+    raise ValueError:
+
 
 
 if __name__ == "__main__":
