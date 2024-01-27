@@ -14,10 +14,10 @@ def test_convert_two_hournumber():
     assert convert("10:55 AM to 11:46 PM") == "10:55 to 23:46"
 
 def test_convert_one_hournumber():
-    assert convert("1 AM to 2 PM") == "1 to 14"
+    assert convert("1 AM to 2 PM") == "1:00 to 14:00"
 
 def test_convert_two_hournumber_Wo_min():
-    assert convert("10 AM to 11 PM") == "10 to 23"
+    assert convert("10 AM to 11 PM") == "10:00 to 23:00"
 
 #def test_convert_three_hournumber_begin():
     #assert convert("100 AM to 11 PM") == "None"
