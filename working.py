@@ -17,10 +17,10 @@ def convert(text):
         tmpoutput= matches.groups()
         begin_hours_str = matches[2]
         begin_min_str = matches[3]
-        if begin_min_str == None: begin_min_str =""
+        #if begin_min_str == None: begin_min_str =""
         end_hours_str= matches[6]
         end_min_str= matches[7]
-        if end_min_str == None: end_min_str =""
+        #if end_min_str == None: end_min_str =""
         begin_hours_int=int(begin_hours_str)
         end_hours_int=int(end_hours_str)
 
@@ -37,8 +37,8 @@ def convert(text):
             begin_hours_str="00"
         #else:
         #     print("else")
-        if begin_min_str =="" :
-            begin_output = begin_hours_str + begin_min_str
+        #if begin_min_str =="" :
+            #begin_output = begin_hours_str + begin_min_str
         else:
             begin_output = begin_hours_str + ":" + begin_min_str
 
@@ -49,8 +49,8 @@ def convert(text):
         #else:
             #print("else")
 
-        if end_min_str =="" :
-            end_output = end_hours_str +  end_min_str
+        #if end_min_str =="" :
+            #end_output = end_hours_str +  end_min_str
         else:
             end_output = end_hours_str + ":" + end_min_str
 
