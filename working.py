@@ -3,7 +3,10 @@ import sys
 
 
 def main():
+    #try:
     print(convert(input("Hours: ")))
+    #except:
+        #raise ValueError
 #input format:
 #9:00 AM to 5:00 PM
 #9 AM to 5 PM
@@ -13,7 +16,6 @@ def convert(text):
     text = text.strip()
     output=''
     if matches := re.search(r'^(([0-9][0-2]?):?([0-5][0-9]?)?) ([A|P]M) to (([0-9][0-2]?):?([0-5][0-9]?)?) ([A|P]M)$', text, re.IGNORECASE):
-
         tmpoutput= matches.groups()
         begin_hours_str = matches[2]
         begin_min_str = matches[3]
@@ -62,7 +64,9 @@ def convert(text):
         output= begin_output + " to " + end_output
 
     else:
-         raise ValueError
+
+        raise ValueError
+
         #print(type(output))
 
         #print("None")
