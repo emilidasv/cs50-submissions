@@ -22,6 +22,9 @@ def test_convert_two_hournumber_Wo_min():
 #def test_convert_threehournumbers_begin():
 #    with pytest.raises(ValueError):
 #        convert("100 AM to 11 PM")
+def test_convert_threehournumbers_begin():
+    with pytest.raises(ValueError):
+        convert("113:00 AM to 5:00AM")
 
 #def test_convert_three_hournumber_end():
 #    with pytest.raises(ValueError):
