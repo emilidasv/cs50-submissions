@@ -39,8 +39,8 @@ def convert(text):
         #     print("else")
         #if begin_min_str =="" :
             #begin_output = begin_hours_str + begin_min_str
-        else:
-            begin_output = begin_hours_str + ":" + begin_min_str
+
+        begin_output = begin_hours_str + ":" + begin_min_str
 
         if end_hours_int<12 and str(matches.group(8))=="PM":
             end_hours_str = str(end_hours_int + 12)
@@ -51,10 +51,9 @@ def convert(text):
 
         #if end_min_str =="" :
             #end_output = end_hours_str +  end_min_str
-        else:
-            end_output = end_hours_str + ":" + end_min_str
+        #else:
 
-
+        end_output = end_hours_str + ":" + end_min_str
 
         output= begin_output + " to " + end_output
 
