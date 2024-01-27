@@ -8,13 +8,13 @@ def test_convert_endOif_day():
     assert convert("11:50 PM to 11:59 PM") == "23:50 to 23:59"
 
 def test_convert_one_hournumber():
-    assert convert("1:04 AM to 2:35 PM") == "1:04 to 14:35"
+    assert convert("1:04 AM to 2:35 PM") == "01:04 to 14:35"
 
 def test_convert_two_hournumber():
     assert convert("10:55 AM to 11:46 PM") == "10:55 to 23:46"
 
 def test_convert_one_hournumber():
-    assert convert("1 AM to 2 PM") == "1:00 to 14:00"
+    assert convert("1 AM to 2 PM") == "01:00 to 14:00"
 
 def test_convert_two_hournumber_Wo_min():
     assert convert("10 AM to 11 PM") == "10:00 to 23:00"
