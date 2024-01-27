@@ -60,15 +60,16 @@ def convert(text):
         end_output = end_hours_str + ":" + end_min_str
 
         output= begin_output + " to " + end_output
-        return output
+
     else:
-        output = "None"
+         raise ValueError
         #print(type(output))
 
         #print("None")
     #print(matches)
 
-    raise ValueError:
+    return output
+
 
 
 
