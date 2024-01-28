@@ -8,10 +8,10 @@ def main():
 
 def count(s):
     s = s.split(" ")
-    print(s)
+    #print(s)
     count_um = 0
     for word in s:
-        print(word)
+        #print(word)
         if matches := re.search(r'^um\b(\,|\?|\.)?$', word ,re.IGNORECASE):
             count_um = count_um + 1
     #print(count_um)
