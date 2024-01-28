@@ -12,7 +12,7 @@ def count(s):
     count_um = 0
     for word in s:
         #print(word)
-        if matches := re.search(r'^um\b(\,|\?|\.)?$', word ,re.IGNORECASE):
+        if matches := re.search(r'^um(\,|\?|\.)?$', word ,re.IGNORECASE):
             count_um = count_um + 1
     #print(count_um)
     return count_um
