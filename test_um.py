@@ -5,6 +5,8 @@ def test_count_one_coma():
     assert count("um, how do you do hummer") == 1
 def test_count_con_qustion():
     assert count("um? 'how do you do hummer") == 1
+def test_count_con_qustion():
+    assert count("Um? 'how do you do hummer") == 1
 
 
 
