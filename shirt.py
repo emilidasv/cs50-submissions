@@ -19,9 +19,9 @@ def main():
 
     shirtimage = Image.open("shirt.png")
     size =  shirtimage.size
-    muppet = ImageOps.fit(image, size)
-    muppet.paste(shirtimage, shirtimage)
-    muppet.save(output_filename)
+    finalimage = ImageOps.fit(image, size)
+    finalimage.paste(shirtimage, shirtimage)
+    finalimage.save(output_filename)
 
 def check_user_input():
     # check command-line argument
