@@ -42,7 +42,6 @@ def check_user_input():
             sys.exit("Invalid output")
     except:
          sys.exit("Invalid output")
-
     file_shirt ="cs50_Tshirt.png"
     #print(file_shirt)  shirt.png
     #print(filename1)   before1.png
@@ -51,10 +50,13 @@ def check_user_input():
     #print(ftype2)
     if (ftype1.lower()!= "png"):
         # open a file in jpg or jpeg and save as temporary png file"
-        pngfile = Image.open(filename1)
-        pngfile.save("tmp_filename1.png")
-        pngfile.close()
-        filename1 = "tmp_filename1.png"
+        try:
+            pngfile = Image.open(filename1)
+            pngfile.save("tmp_filename1.png")
+            pngfile.close()
+            filename1 = "tmp_filename1.png"
+        except:
+            sys.exit("Input does not exist")
 
     resize_paste_images(filename1, file_shirt, filename2)
 
