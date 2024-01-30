@@ -42,7 +42,7 @@ def check_user_input():
             sys.exit("Invalid output")
     except:
          sys.exit("Invalid output")
-    file_shirt ="cs50_Tshirt.png"
+    file_shirt ="shirt.png"
     #print(file_shirt)  shirt.png
     #print(filename1)   before1.png
     #print(filename2)   after1.png
