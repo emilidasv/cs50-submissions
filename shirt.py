@@ -32,10 +32,8 @@ def check_user_input():
         sys.exit("Too many command-line arguments")
     #input file
     filename1 = sys.argv[1]
-    input_filename = filename1
     #outputfile
     filename2 = sys.argv[2]
-    output_filename = filename2
 
     try:
         fname1, ftype1 = filename1.split(".")
@@ -44,7 +42,7 @@ def check_user_input():
         if ((valid_type_file(ftype1)) and (valid_type_file(ftype2))):
 
             if ftype1.upper() != ftype2.upper():
-                print("Input and output have different extensions")
+                sys.exit("Input and output have different extensions")
         else:
             sys.exit("Invalid output")
     except:
