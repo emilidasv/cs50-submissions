@@ -19,16 +19,9 @@ def test_convert_one_hournumber():
 def test_convert_two_hournumber_Wo_min():
     assert convert("10 AM to 11 PM") == "10:00 to 23:00"
 
-#def test_convert_threehournumbers_begin():
-#    with pytest.raises(ValueError):
-#        convert("100 AM to 11 PM")
 def test_convert_threehournumbers_begin():
     with pytest.raises(ValueError):
         convert("113:00 AM to 5:00AM")
-
-#def test_convert_three_hournumber_end():
-#    with pytest.raises(ValueError):
-#        convert("10 AM to 112 PM")
 
 def test_convert_60min_begin():
     with pytest.raises(ValueError):

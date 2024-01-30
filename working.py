@@ -1,7 +1,6 @@
 import re
 import sys
 
-
 def main():
     #try:
     print(convert(input("Hours: ")))
@@ -39,7 +38,6 @@ def convert(text):
 
         elif (begin_hours_int == 12 and str(matches.group(4))=="AM"):
             begin_hours_str="00"
-
         #else:
         #     print("else")
         #if begin_min_str =="" :
