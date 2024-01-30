@@ -41,7 +41,7 @@ def check_user_input():
         fname1, ftype1 = filename1.split(".")
         fname2, ftype2 = filename2.split(".")
 
-        if ((valid_type_file(ftype1) and valid_type_file(ftype2))):
+        if ((valid_type_file(ftype1)) and (valid_type_file(ftype2))):
 
             if ftype1.upper() != ftype2.upper():
                 print("Input and output have different extensions")
