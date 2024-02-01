@@ -17,7 +17,10 @@ def main():
     p = inflect.engine()
     output_str = p.number_to_words(minutes, andword="") + " minutes"
     # first letter
-    output_str[0] = output_str[0].upper()
+    first_letter = output_str[0].upper()
+    #print(first_letter)
+    rest_of_str =output_str[1:]
+    output_str=first_letter + rest_of_str
     print(output_str)
 
 
