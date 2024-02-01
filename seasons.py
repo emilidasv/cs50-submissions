@@ -9,14 +9,13 @@ def main():
 
 
     if matches := re.search(r'([1-2][9|0][0-9][0-9])-(0[1-9]|1[0-2])-(0[1-9]|1[0-9]|2[0-9]|3[0-1])', date_in_text):
-        print(matches.group())
+        minutes = calculate_minutes(date_in_text)
     else:
         sys.exit("Invalid date")
-    minutes = calculate_minutes(date_in_text)
 
 
     p = inflect.engine()
-    output_str = p.number_to_words(minutes, andword=",") + " minutes"
+    output_str = p.number_to_words(minutes, andword="") + " minutes"
     print(output_str)
 
 
