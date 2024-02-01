@@ -34,7 +34,7 @@ def calculate_minutes(date_in_text):
     #print(days_difference.total_seconds())
     minutes = int(days_difference.total_seconds()/60)
     #print(int(minutes))
-    print(minutes)
+    #print(minutes)
 
     return minutes
 
