@@ -8,10 +8,9 @@ def main():
     date_in_text = input("Date of Birth:")
 
 
-    if matches := re.search(r'([1-2][9|0][0-9][0-9])-(0[1-9]|1[0-2])-(0[1-9]|1[0-9]|2[0-9]|3[0-1])', date_in_text):
-        minutes = calculate_minutes(date_in_text)
-    else:
-        sys.exit("Invalid date")
+    check_input(date_in_text)
+
+
 
 
     p = inflect.engine()
@@ -23,7 +22,11 @@ def main():
     output_str=first_letter + rest_of_str
     print(output_str)
 
-
+def check_input(date_in_text):
+    if matches := re.search(r'([1-2][9|0][0-9][0-9])-(0[1-9]|1[0-2])-(0[1-9]|1[0-9]|2[0-9]|3[0-1])', date_in_text):
+        minutes = calculate_minutes(date_in_text)
+    else:
+        sys.exit("Invalid date")
 def calculate_minutes(date_in_text):
     date_format = "%Y-%m-%d"
     # todays date
