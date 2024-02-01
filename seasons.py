@@ -8,10 +8,12 @@ def main():
     date_in_text = input("Date of Birth:")
 
 
-    check_input(date_in_text)
-
-
-
+    if(check_input(date_in_text)):
+        end_date = date_in_text
+        # todays date
+        today_str = str(date.today())
+        start_date =today_str
+        minutes = calculate_minutes(start_date, end_date)
 
     p = inflect.engine()
     output_str = p.number_to_words(minutes, andword="") + " minutes"
@@ -24,16 +26,16 @@ def main():
 
 def check_input(date_in_text):
     if matches := re.search(r'([1-2][9|0][0-9][0-9])-(0[1-9]|1[0-2])-(0[1-9]|1[0-9]|2[0-9]|3[0-1])', date_in_text):
-        minutes = calculate_minutes(date_in_text)
+        return True
     else:
         sys.exit("Invalid date")
-def calculate_minutes(date_in_text):
+
+def calculate_minutes(start, end ):
     date_format = "%Y-%m-%d"
-    # todays date
-    today_str= str(date.today())
+
     #print(today_str)
-    today_obj = datetime.strptime(today_str,date_format )
-    date_in_obj = datetime.strptime(date_in_text, date_format)
+    today_obj = datetime.strptime(start,date_format )
+    date_in_obj = datetime.strptime(end, date_format)
     #print(type(today_obj))
     #print(type(date_in_obj))
     days_difference = today_obj - date_in_obj
