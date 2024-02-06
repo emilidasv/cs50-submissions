@@ -48,6 +48,11 @@ def test_depostit_and_witdraw2():
     assert myjar._size== 0
     assert myjar._capacity == 12
 
+def test_withdraw_from_Emtpy_jar():
+    myjar= Jar()
+    with pytest.raises(ValueError):
+        myjar.withdraw(2)
+
 
 
 
