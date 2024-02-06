@@ -41,12 +41,12 @@ def test_depostit_and_witdraw():
     myjar = Jar()
     myjar.deposit(12)
     myjar.withdraw(2)
-    assert myjar._size == 10
+    assert myjar.size == 10
 
 def test_depostit_and_witdraw2():
     myjar = Jar()
-    assert myjar._size== 0
-    assert myjar._capacity == 12
+    assert myjar.size== 0
+    assert myjar.capacity == 12
 
 def test_withdraw_from_Emtpy_jar():
     myjar= Jar()
