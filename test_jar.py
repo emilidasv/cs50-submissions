@@ -45,7 +45,6 @@ def test_deposit_and_witdraw():
     myjar.withdraw(2)
     assert myjar.size == 8
 
-
 def test_depostit_and_witdraw2():
     myjar = Jar()
     assert myjar.size== 0

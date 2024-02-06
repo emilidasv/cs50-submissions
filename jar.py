@@ -20,7 +20,7 @@ class Jar:
             raise ValueError ("Is full")
 
     def withdraw(self, n):
-        if self.size > n :
+        if self.size >= n :
             self._size = self.size - n
         else:
             raise ValueError("not that many cookies left")
