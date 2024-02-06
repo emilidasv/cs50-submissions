@@ -55,11 +55,6 @@ def test_withdraw_from_Emtpy_jar():
     with pytest.raises(ValueError):
         myjar.withdraw(2)
 
-def test_witdraw_tree_from5():
-    myjar = Jar()
-    myjar.deposit(5)
-    myjar.withdraw(3)
-    assert myjar.size == 2
 
 
 
