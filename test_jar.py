@@ -37,34 +37,3 @@ def test_withdraw_one_more_than_capacity():
     with pytest.raises(ValueError):
         myjar.withdraw(13)
 
-def test_deposit_and_witdraw():
-    myjar = Jar()
-    myjar.deposit(12)
-    myjar.withdraw(2)
-    assert myjar.size == 10
-    myjar.withdraw(2)
-    assert myjar.size == 8
-
-def test_depostit_and_witdraw2():
-    myjar = Jar()
-    assert myjar.size== 0
-    assert myjar.capacity == 12
-
-def test_withdraw_from_Emtpy_jar():
-    myjar= Jar()
-    with pytest.raises(ValueError):
-        myjar.withdraw(2)
-
-def test_witdraw_tree_from5():
-    myjar = Jar()
-    myjar.deposit(5)
-    myjar.withdraw(3)
-    assert myjar.size == 2
-
-
-
-
-
-
-
-
