@@ -40,7 +40,17 @@ def test_withdraw_one_more_than_capacity():
 def test_depostit_and_witdraw():
     myjar = Jar()
     myjar.deposit(12)
-    assert myjar._size == 12
+    myjar.withdraw(2)
+    assert myjar._size == 10
+
+def test_depostit_and_witdraw2():
+    myjar = Jar()
+    assert myjar._size== 0
+    assert myjar._capacity == 12
+
+
+
+
 
 
 
