@@ -57,7 +57,7 @@ def test_witdraw_tree_from5():
     myjar = Jar()
     myjar.deposit(5)
     myjar.withdraw(3)
-    assert myjar._size == 2
+    assert myjar.size == 2
 
 
 
