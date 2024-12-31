@@ -1,0 +1,17 @@
+#Requirements libraries that needs to be installed, two first is included but the third
+#needs to be installed by the command:"PIP3 Install Pillow"   
+    #You can check that all you need is insatlled by running the script: check_libraries_installed.py 
+    #(no check for pyinstaller because it is not needed for executing the program just to create the standalone)
+
+##sqlite3
+    #The sqlite3 module in Python provides an easy-to-use interface for interacting with SQLite databases.
+## Pillow 
+    #Python Imaging Library used for image processing.
+##Tkinter 
+    #Standard Python interface to the Tk GUI toolkit.#
+
+
+##libraries
+sqlite3
+tkinter
+pillow
